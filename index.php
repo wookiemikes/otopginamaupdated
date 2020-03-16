@@ -1,4 +1,10 @@
+<?php 
 
+session_start();
+
+include "login1.php";
+
+?>
 <!DOCTYPE html>
 <html lang="zxx">
 
@@ -67,6 +73,16 @@
                     </div>
                 </div>
                 <div class="ht-right">
+                    <?php 
+                    
+                            if (condition) {
+                                # code...
+                            } else {
+                                # code...
+                            }
+                            
+                    
+                    ?>
                     <a href="login.php" class="login-panel"><i class="fa fa-user" style="color: #db9a37;"></i>Login</a>
                 </div>
             </div>

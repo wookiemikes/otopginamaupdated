@@ -1,3 +1,4 @@
+<?php include 'login1.php';?>
 <!DOCTYPE html>
 <html lang="zxx">
 
@@ -144,7 +145,7 @@
                 <div class="col-lg-6 offset-lg-3">
                     <div class="login-form">
                         <h2>Login</h2>
-                        <form action="login1.php" method="POST">
+                        <form action="login.php" method="POST">
                             <div class="group-input">
                                 <label for="username">Username or email address *</label>
                                 <input type="text" id="username" name="username">
@@ -153,7 +154,7 @@
                                 <label for="pass">Password *</label>
                                 <input type="password" id="password" name="password">
                             </div>
-                            <button type="button" name="login" id="login" class="site-btn login-btn">Sign In</button>
+                            <input type="submit" value="Log In" name="login" id="login" class="site-btn login-btn">
                         </form>
                         <div class="switch-login">
                             <a href="./register.php" class="or-login">Or Create An Account</a>
