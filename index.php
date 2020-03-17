@@ -1,14 +1,4 @@
-<?php 
 
-session_start();
-
-  if (!isset($_SESSION['loggedIN'])) {
-    # code...
-    header('Location: dashboardlogin.php');
-    exit();
-  }
-
-?>
 <!DOCTYPE html>
 <html lang="zxx">
 
