@@ -1,4 +1,4 @@
-<?php include 'login1.php';?>
+
 <!DOCTYPE html>
 <html lang="zxx">
 
@@ -29,6 +29,7 @@
           crossorigin="anonymous"> 
           </script>
           <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+          
         
 </head>
 
@@ -46,30 +47,7 @@
                 <div class="ht-left">
                     <div class="mail-service">
                     <div id="clockbox"></div>
-                        <script type="text/javascript">
-                            var tday=["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
-                            var tmonth=["January","February","March","April","May","June","July","August","September","October","November","December"];
-
-                            function GetClock(){
-                            var d=new Date();
-                            var nday=d.getDay(),nmonth=d.getMonth(),ndate=d.getDate(),nyear=d.getFullYear();
-                            var nhour=d.getHours(),nmin=d.getMinutes(),nsec=d.getSeconds(),ap;
-
-                            if(nhour==0){ap=" AM";nhour=12;}
-                            else if(nhour<12){ap=" AM";}
-                            else if(nhour==12){ap=" PM";}
-                            else if(nhour>12){ap=" PM";nhour-=12;}
-
-                            if(nmin<=9) nmin="0"+nmin;
-                            if(nsec<=9) nsec="0"+nsec;
-
-                            var clocktext=""+tday[nday]+", "+tmonth[nmonth]+" "+ndate+", "+nyear+" "+nhour+":"+nmin+":"+nsec+ap+"";
-                            document.getElementById('clockbox').innerHTML=clocktext;
-                            }
-
-                            GetClock();
-                            setInterval(GetClock,1000);
-                        </script>
+                    <script src="js/date.js"></script>    
                     </div>
                 </div>
                 <div class="ht-right">
@@ -154,7 +132,7 @@
                                 <label for="pass">Password *</label>
                                 <input type="password" id="password" name="password">
                             </div>
-                            <input type="submit" value="Log In" name="login" id="login" class="site-btn login-btn">
+                            <button type="button"  name="login" id="login" class="site-btn login-btn">Login</button>
                         </form>
                         <div class="switch-login">
                             <a href="./register.php" class="or-login">Or Create An Account</a>
@@ -256,6 +234,36 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
         </div>
     </footer>
     <!-- Footer Section End -->
+
+    <script type="text/javascript">
+    $(document).ready(function (){
+      $("#login").on('click',function(){
+        var username = $('#username').val();
+        var password = $('#password').val();
+        
+        if (username == "" || password == "")
+          alert('Wrong Input, Please check your username or password');
+        else {
+          $.ajax({
+            url: 'login1.php',
+            method: 'POST',
+            data: {
+              login: 1,
+              username:username,
+              password:password
+            },
+            success: function (response) {
+              $("#response").html(response);
+
+              if (response.indexOf('success') >= 0)
+              window.location = 'index.php';
+            },
+            datatype: 'text'
+          });
+        }
+      });
+    }); 
+  </script>
 
 
     <!-- Js Plugins -->

@@ -2,7 +2,11 @@
 
 session_start();
 
-include "login1.php";
+  if (!isset($_SESSION['loggedIN'])) {
+    # code...
+    header('Location: dashboardlogin.php');
+    exit();
+  }
 
 ?>
 <!DOCTYPE html>
