@@ -74,12 +74,7 @@ include "login1.php";
                 </div>
                 <div class="ht-right">
                     <?php 
-                    
-                            if (condition) {
-                                # code...
-                            } else {
-                                # code...
-                            }
+                        echo $_SESSION["username"];
                             
                     
                     ?>
