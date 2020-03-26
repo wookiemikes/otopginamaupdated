@@ -394,12 +394,13 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
                         <input class="form-control" type="text" id="username" name="username" placeholder="Email/Username">
                     </div>
                     <div class="form-group">
-                        <input class="form-control" type="text" id="username" name="username" placeholder="Password">
+                        <input class="form-control" type="password" id="password" name="password" placeholder="Password">
                     </div>
+                    <p style="float:right;">No account yet? <a href="register.php" style="color:#db9a37;">Register Here</a></p>
                 </div>
                 
             </div>
-            <div class="modal-footer" style="border-top: 0 none;">
+            <div class="modal-footer mt-2" style="border-top: 0 none;">
                 <button type="button" class="btn btn-light pl-5 pr-5 text-secondary" style="border-radius: 0px;" data-dismiss="modal">CANCEL</button>
                 <button type="button" class="btn text-white pl-5 pr-5" style="border-radius: 0px; background-color: #db9a37;">LOGIN</button>
             </div>
