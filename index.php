@@ -336,7 +336,7 @@
                 <div class="col-lg-3">
                     <div class="footer-left">
                         <div class="footer-logo">
-                            <a href="#"><img src="img/footer-logo.png" alt=""></a>
+                            <a href="#"><img src="img/ginafoot.png" alt=""></a>
                         </div>
                         <ul>
                             <li>Address: Rizal St, Cagayan de Oro, Misamis Oriental</li>
