@@ -84,9 +84,6 @@ include 'server/serverconnection.php';
                         </script>
                     </div>
                 </div>
-                <div class="ht-right">
-                    <a href="#" class="login-panel"><i class="fa fa-user"></i>Login</a>
-                </div>
             </div>
         </div>
         <div class="container">

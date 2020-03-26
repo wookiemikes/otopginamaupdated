@@ -198,16 +198,15 @@
 
           <div class="col-lg-2 col-md-6 wow fadeInUp">
             <div class="member">
-              <img src="assets/img/team-1.jpg" class="img-fluid" alt="">
+              <img src="assets/img/websiteicon.png" class="img-fluid" alt="">
               <div class="member-info">
                 <div class="member-info-content">
-                  <h4>Walter White</h4>
-                  <span>Chief Executive Officer</span>
+                  <h4>Product Name</h4>
+                  <span>Store</span>
                   <div class="social">
-                    <a href=""><i class="fa fa-twitter"></i></a>
-                    <a href=""><i class="fa fa-facebook"></i></a>
-                    <a href=""><i class="fa fa-google-plus"></i></a>
-                    <a href=""><i class="fa fa-linkedin"></i></a>
+                    <a href=""><i class="fa fa-shopping-cart"></i></a>
+                    <a href=""><i class="fa fa-eye"></i></a>
+                    <a href=""><i class="fa fa-heart"></i></i></a>
                   </div>
                 </div>
               </div>
@@ -336,7 +335,7 @@
                 <div class="col-lg-3">
                     <div class="footer-left">
                         <div class="footer-logo">
-                            <a href="#"><img src="img/ginafoot.png" alt=""></a>
+                            <a href="index.php"><img src="img/ginafoot.png" alt=""></a>
                         </div>
                         <ul>
                             <li>Address: Rizal St, Cagayan de Oro, Misamis Oriental</li>
@@ -382,28 +381,30 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
-            <div class="modal-header" style="border-bottom: 0 none;">
-                <h5 class="modal-title" id="exampleModalCenterTitle"><img src="assets/img/websiteimg.png" style="margin: 2px 10px 2px 0px;" alt="" height="30px" width="33px"><b>LOGIN</b></h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body mt-3 mb-5">
-                <div class="container-fluid">
-                    <div class="form-group">
-                        <input class="form-control" type="text" id="username" name="username" placeholder="Email/Username">
-                    </div>
-                    <div class="form-group">
-                        <input class="form-control" type="password" id="password" name="password" placeholder="Password">
-                    </div>
-                    <p style="float:right;">No account yet? <a href="register.php" style="color:#db9a37;">Register Here</a></p>
+                <div class="modal-header" style="border-bottom: 0 none;">
+                    <h5 class="modal-title" id="exampleModalCenterTitle"><img src="assets/img/websiteimg.png" style="margin: 2px 10px 2px 0px;" alt="" height="30px" width="33px"><b>LOGIN</b></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
                 </div>
-                
-            </div>
-            <div class="modal-footer mt-2" style="border-top: 0 none;">
-                <button type="button" class="btn btn-light pl-5 pr-5 text-secondary" style="border-radius: 0px;" data-dismiss="modal">CANCEL</button>
-                <button type="button" class="btn text-white pl-5 pr-5" style="border-radius: 0px; background-color: #db9a37;">LOGIN</button>
-            </div>
+                <form action="index.php" method="POST">
+                    <div class="modal-body mt-3 mb-5">
+                        <div class="container-fluid">
+                            <div class="form-group">
+                                <input class="form-control" type="text" id="username" name="username" placeholder="Email/Username">
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control" type="password" id="password" name="password" placeholder="Password">
+                            </div>
+                            <p style="float:right;">No account yet? <a href="register.php" style="color:#db9a37;">Register Here</a></p>
+                        </div>
+                        
+                    </div>
+                    <div class="modal-footer mt-2" style="border-top: 0 none;">
+                        <button type="button" class="btn btn-light pl-5 pr-5 text-secondary" style="border-radius: 0px;" data-dismiss="modal">CANCEL</button>
+                        <button type="submit" class="btn text-white pl-5 pr-5" style="border-radius: 0px; background-color: #db9a37;">LOGIN</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
