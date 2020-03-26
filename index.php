@@ -67,7 +67,7 @@
                     </div>
                 </div>
                 <div class="ht-right">
-                    <a href="login.php" class="login-panel"><i class="fa fa-user" style="color: #db9a37;"></i>Login</a>
+                    <a href="#" class="login-panel" data-toggle="modal" data-target="#loginModal"><i class="fa fa-user" style="color: #db9a37;"></i>Login</a>
                 </div>
             </div>
         </div>
@@ -377,6 +377,35 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
             </div>
         </div>
     </footer>
+
+    <!--Modals-->
+    <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+            <div class="modal-header" style="border-bottom: 0 none;">
+                <h5 class="modal-title" id="exampleModalCenterTitle"><img src="assets/img/websiteimg.png" style="margin: 2px 10px 2px 0px;" alt="" height="30px" width="33px"><b>LOGIN</b></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body mt-3 mb-5">
+                <div class="container-fluid">
+                    <div class="form-group">
+                        <input class="form-control" type="text" id="username" name="username" placeholder="Email/Username">
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" type="text" id="username" name="username" placeholder="Password">
+                    </div>
+                </div>
+                
+            </div>
+            <div class="modal-footer" style="border-top: 0 none;">
+                <button type="button" class="btn btn-light pl-5 pr-5 text-secondary" style="border-radius: 0px;" data-dismiss="modal">CANCEL</button>
+                <button type="button" class="btn text-white pl-5 pr-5" style="border-radius: 0px; background-color: #db9a37;">LOGIN</button>
+            </div>
+            </div>
+        </div>
+    </div>
     <!-- Footer Section End -->
 
     <!-- Js Plugins -->
