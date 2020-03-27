@@ -68,7 +68,9 @@
                 </div>
                 <div class="ht-right">
                     <a href="#" class="login-panel" data-toggle="modal" data-target="#loginModal"><i class="fa fa-user" style="color: #db9a37;"></i>Login</a>
+                    
                 </div>
+                
             </div>
         </div>
         <div class="container">
@@ -86,7 +88,7 @@
                             <button type="button" class="category-btn">Search Store</button>
                             <div class="input-group">
                                 <input type="text" placeholder="What do you need?">
-                                <button type="button" style="margin-left: 500px;" class=""><i class="ti-search"></i></button>
+                                <button type="button"  class=""><i class="ti-search"></i></button>
                             </div>
                         </div>
                     </div>
@@ -94,7 +96,7 @@
                         <ul class="nav-right">
                             <li class="cart-icon">
                                 <a href="#">
-                                    <i class="icon_bag_alt"></i>
+                                    <i class="icon_bag_alt" style="font-size: 20px;"></i>
                                     <span>3</span>
                                 </a>
                                 <div class="cart-hover">
@@ -130,7 +132,7 @@
                                     </div>
                                     <div class="select-total">
                                         <span>total:</span>
-                                        <h5>$120.00</h5>
+                                        <h5>₱ 120.00</h5>
                                     </div>
                                     <div class="select-button">
                                         <a href="#" class="primary-btn view-card">VIEW CARD</a>
@@ -138,7 +140,7 @@
                                     </div>
                                 </div>
                             </li>
-                            <li class="cart-price">$150.00</li>
+                            <li class="cart-price">₱ 150.00</li>
                         </ul>
                     </div>
                 </div>
@@ -196,71 +198,149 @@
 
         <div class="row">
 
-          <div class="col-lg-2 col-md-6 wow fadeInUp">
+          <div class="col-lg-3 col-md-6 wow fadeInUp">
             <div class="member">
-              <img src="assets/img/websiteicon.png" class="img-fluid" alt="">
+              <img src="assets/img/ginamalogo.jpg" class="img-fluid" alt="">
               <div class="member-info">
                 <div class="member-info-content">
                   <h4>Product Name</h4>
                   <span>Store</span>
                   <div class="social">
-                    <a href=""><i class="fa fa-shopping-cart"></i></a>
-                    <a href=""><i class="fa fa-eye"></i></a>
-                    <a href=""><i class="fa fa-heart"></i></i></a>
+                    <a class="btn btn-outline-info mb-3" href=""><i class="fa fa-shopping-cart"></i></a>
+                    <a class="btn btn-outline-info mb-3" href="product.php"><i class="fa fa-eye"></i></a>
+                    <a class="btn btn-outline-info mb-3" href=""><i class="fa fa-heart"></i></i></a>
                   </div>
                 </div>
               </div>
             </div>
           </div>
 
-          <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+          <div class="col-lg-3 col-md-6 wow fadeInUp">
             <div class="member">
-              <img src="assets/img/team-2.jpg" class="img-fluid" alt="">
+              <img src="assets/img/ginamalogo.jpg" class="img-fluid" alt="">
               <div class="member-info">
                 <div class="member-info-content">
-                  <h4>Sarah Jhonson</h4>
-                  <span>Product Manager</span>
+                  <h4>Product Name</h4>
+                  <span>Store</span>
                   <div class="social">
-                    <a href=""><i class="fa fa-twitter"></i></a>
-                    <a href=""><i class="fa fa-facebook"></i></a>
-                    <a href=""><i class="fa fa-google-plus"></i></a>
-                    <a href=""><i class="fa fa-linkedin"></i></a>
+                    <a class="btn btn-outline-info mb-3" href=""><i class="fa fa-shopping-cart"></i></a>
+                    <a class="btn btn-outline-info mb-3" href=""><i class="fa fa-eye"></i></a>
+                    <a class="btn btn-outline-info mb-3" href=""><i class="fa fa-heart"></i></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 wow fadeInUp">
+            <div class="member">
+              <img src="assets/img/ginamalogo.jpg" class="img-fluid" alt="">
+              <div class="member-info">
+                <div class="member-info-content">
+                  <h4>Product Name</h4>
+                  <span>Store</span>
+                  <div class="social">
+                    <a class="btn btn-outline-info mb-3" href=""><i class="fa fa-shopping-cart"></i></a>
+                    <a class="btn btn-outline-info mb-3" href=""><i class="fa fa-eye"></i></a>
+                    <a class="btn btn-outline-info mb-3" href=""><i class="fa fa-heart"></i></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 wow fadeInUp">
+            <div class="member">
+              <img src="assets/img/ginamalogo.jpg" class="img-fluid" alt="">
+              <div class="member-info">
+                <div class="member-info-content">
+                  <h4>Product Name</h4>
+                  <span>Store</span>
+                  <div class="social">
+                    <a class="btn btn-outline-info mb-3" href=""><i class="fa fa-shopping-cart"></i></a>
+                    <a class="btn btn-outline-info mb-3" href=""><i class="fa fa-eye"></i></a>
+                    <a class="btn btn-outline-info mb-3" href=""><i class="fa fa-heart"></i></i></a>
                   </div>
                 </div>
               </div>
             </div>
           </div>
 
-          <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
+          <div class="col-lg-3 col-md-6 wow fadeInUp">
             <div class="member">
-              <img src="assets/img/team-3.jpg" class="img-fluid" alt="">
+              <img src="assets/img/ginamalogo.jpg" class="img-fluid" alt="">
               <div class="member-info">
                 <div class="member-info-content">
-                  <h4>William Anderson</h4>
-                  <span>CTO</span>
+                  <h4>Product Name</h4>
+                  <span>Store</span>
                   <div class="social">
-                    <a href=""><i class="fa fa-twitter"></i></a>
-                    <a href=""><i class="fa fa-facebook"></i></a>
-                    <a href=""><i class="fa fa-google-plus"></i></a>
-                    <a href=""><i class="fa fa-linkedin"></i></a>
+                    <a class="btn btn-outline-info mb-3" href=""><i class="fa fa-shopping-cart"></i></a>
+                    <a class="btn btn-outline-info mb-3" href=""><i class="fa fa-eye"></i></a>
+                    <a class="btn btn-outline-info mb-3" href=""><i class="fa fa-heart"></i></i></a>
                   </div>
                 </div>
               </div>
             </div>
           </div>
 
-          <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+          <div class="col-lg-3 col-md-6 wow fadeInUp">
             <div class="member">
-              <img src="assets/img/team-4.jpg" class="img-fluid" alt="">
+              <img src="assets/img/ginamalogo.jpg" class="img-fluid" alt="">
               <div class="member-info">
                 <div class="member-info-content">
-                  <h4>Amanda Jepson</h4>
-                  <span>Accountant</span>
+                  <h4>Product Name</h4>
+                  <span>Store</span>
                   <div class="social">
-                    <a href=""><i class="fa fa-twitter"></i></a>
-                    <a href=""><i class="fa fa-facebook"></i></a>
-                    <a href=""><i class="fa fa-google-plus"></i></a>
-                    <a href=""><i class="fa fa-linkedin"></i></a>
+                    <a class="btn btn-outline-info mb-3" href=""><i class="fa fa-shopping-cart"></i></a>
+                    <a class="btn btn-outline-info mb-3" href=""><i class="fa fa-eye"></i></a>
+                    <a class="btn btn-outline-info mb-3" href=""><i class="fa fa-heart"></i></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-lg-3 col-md-6 wow fadeInUp">
+            <div class="member">
+              <img src="assets/img/ginamalogo.jpg" class="img-fluid" alt="">
+              <div class="member-info">
+                <div class="member-info-content">
+                  <h4>Product Name</h4>
+                  <span>Store</span>
+                  <div class="social">
+                    <a class="btn btn-outline-info mb-3" href=""><i class="fa fa-shopping-cart"></i></a>
+                    <a class="btn btn-outline-info mb-3" href=""><i class="fa fa-eye"></i></a>
+                    <a class="btn btn-outline-info mb-3" href=""><i class="fa fa-heart"></i></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 wow fadeInUp">
+            <div class="member">
+              <img src="assets/img/ginamalogo.jpg" class="img-fluid" alt="">
+              <div class="member-info">
+                <div class="member-info-content">
+                  <h4>Product Name</h4>
+                  <span>Store</span>
+                  <div class="social">
+                    <a class="btn btn-outline-info mb-3" href=""><i class="fa fa-shopping-cart"></i></a>
+                    <a class="btn btn-outline-info mb-3" href=""><i class="fa fa-eye"></i></a>
+                    <a class="btn btn-outline-info mb-3" href=""><i class="fa fa-heart"></i></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 wow fadeInUp">
+            <div class="member">
+              <img src="assets/img/ginamalogo.jpg" class="img-fluid" alt="">
+              <div class="member-info">
+                <div class="member-info-content">
+                  <h4>Product Name</h4>
+                  <span>Store</span>
+                  <div class="social">
+                    <a class="btn btn-outline-info mb-3" href=""><i class="fa fa-shopping-cart"></i></a>
+                    <a class="btn btn-outline-info mb-3" href=""><i class="fa fa-eye"></i></a>
+                    <a class="btn btn-outline-info mb-3" href=""><i class="fa fa-heart"></i></i></a>
                   </div>
                 </div>
               </div>
