@@ -90,11 +90,11 @@
                     </div>
                     <div class="col-lg-7 col-md-7 mt-4">
                         <div class="advanced-search">
-                            <button type="button" class="category-btn">All Categories</button>
-                            <form action="#" class="input-group">
+                            <button type="button" class="category-btn">Search Store</button>
+                            <div class="input-group">
                                 <input type="text" placeholder="What do you need?">
-                                <button type="button"><i class="ti-search"></i></button>
-                            </form>
+                                <button type="button"  class=""><i class="ti-search"></i></button>
+                            </div>
                         </div>
                     </div>
                     <div class="col-lg-3 text-right col-md-3 mt-4">
