@@ -398,6 +398,11 @@ ol {
 	margin-right: 8px;
 }
 
+.header-top .ht-right .lan-selector {
+	float: right;
+	margin-top: 15px;
+	margin-bottom: 13px;
+}
 
 .header-top .ht-right .top-social {
 	float: right;
@@ -419,7 +424,7 @@ ol {
 }
 
 .inner-header .logo {
-	padding: 2px 0;
+	padding: 12px 0;
 }
 
 .inner-header .logo a {
@@ -459,14 +464,12 @@ ol {
 	position: absolute;
 	right: 11px;
 	top: 10px;
-	content: "3";
-	font-family: "ElegantIcons";
 	font-size: 16px;
 	color: #b2b2b2;
 }
 
 .inner-header .advanced-search .input-group {
-	max-width: 70%;
+	max-width: 72%;
 	height: 100%;
 }
 
@@ -1679,7 +1682,6 @@ ol {
 -----------------------*/
 
 .breadcrumb-text {
-	border-top: 1px solid #ebebeb;
 	border-bottom: 1px solid #ebebeb;
 	padding: 15px 0;
 }
