@@ -64,16 +64,16 @@
                         </script>
                     </div>
                     <div class="phone-service">
-                        <i class=" fa fa-phone"></i>
-                        +65 11.188.888
+                        <i class=" 	fa fa-phone"></i>
+                        0977 281 3159
                     </div>
                 </div>
                 <div class="ht-right">
-                    <a href="#" class="login-panel" style="float: center;"><i class="fa fa-user"></i>Register</a>
-                    <a href="#" class="login-panel" style="margin-right: 30px; float: center;"><i class="fa fa-user"></i>Login</a>
+                    <a href="register.php" class="login-panel" style="float: center;"><i class="fa fa-user"></i>Register</a>
+                    <a href="" class="login-panel" style="margin-right: 30px; float: center;" data-toggle="modal" data-target="#loginModal"><i class="fa fa-user"></i>Login</a>
                     <div class="top-social">
-                        <a href="#"><i class="ti-facebook"></i></a>
-                        <a href="#"><i class="ti-twitter-alt"></i></a>
+                        <a href="https://www.facebook.com/otopginama"><i class="ti-facebook"></i></a>
+                        <a href="https://www.dti.gov.ph/otop"><i class="fa fa-globe"></i></a>
                     </div>
                 </div>
             </div>
@@ -321,8 +321,8 @@
                         <div class="col-lg-6">
                             <div class="product-details">
                                 <div class="pd-title">
-                                    <span>oranges</span>
-                                    <h3>Pure Pineapple</h3>
+                                    <span>Company Name</span>
+                                    <h3>Product Name</h3>
                                     <a href="#" class="heart-icon"><i class="icon_heart_alt"></i></a>
                                 </div>
                                 <div class="pd-rating">

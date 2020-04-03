@@ -54,10 +54,10 @@ include 'server/serverconnection.php';
     <!-- Header Section Begin -->
     <header class="header-section">
         <div class="header-top">
-            <div class="container">
+        <div class="container">
                 <div class="ht-left">
                     <div class="mail-service">
-                    <div id="clockbox"></div>
+                        <div id="clockbox" style="font-size: 14px;"></div>
                         <script type="text/javascript">
                             var tday=["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
                             var tmonth=["January","February","March","April","May","June","July","August","September","October","November","December"];
@@ -82,6 +82,18 @@ include 'server/serverconnection.php';
                             GetClock();
                             setInterval(GetClock,1000);
                         </script>
+                    </div>
+                    <div class="phone-service">
+                        <i class=" 	fa fa-phone"></i>
+                        0977 281 3159
+                    </div>
+                </div>
+                <div class="ht-right">
+                    <a href="register.php" class="login-panel" style="float: center;"><i class="fa fa-user"></i>Register</a>
+                    <a href="" class="login-panel" style="margin-right: 30px; float: center;" data-toggle="modal" data-target="#loginModal"><i class="fa fa-user"></i>Login</a>
+                    <div class="top-social">
+                        <a href="https://www.facebook.com/otopginama"><i class="ti-facebook"></i></a>
+                        <a href="https://www.dti.gov.ph/otop"><i class="fa fa-globe"></i></a>
                     </div>
                 </div>
             </div>

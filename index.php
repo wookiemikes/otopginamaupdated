@@ -39,7 +39,7 @@
             <div class="container">
                 <div class="ht-left">
                     <div class="mail-service">
-                        <div id="clockbox"></div>
+                        <div id="clockbox" style="font-size: 14px;"></div>
                         <script type="text/javascript">
                             var tday=["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
                             var tmonth=["January","February","March","April","May","June","July","August","September","October","November","December"];
@@ -65,12 +65,19 @@
                             setInterval(GetClock,1000);
                         </script>
                     </div>
+                    <div class="phone-service">
+                        <i class=" 	fa fa-phone"></i>
+                        0977 281 3159
+                    </div>
                 </div>
                 <div class="ht-right">
-                    <a href="#" class="login-panel" data-toggle="modal" data-target="#loginModal"><i class="fa fa-user" style="color: #db9a37;"></i>Login</a>
-                    
+                    <a href="register.php" class="login-panel" style="float: center;"><i class="fa fa-user"></i>Register</a>
+                    <a href="" class="login-panel" style="margin-right: 30px; float: center;" data-toggle="modal" data-target="#loginModal"><i class="fa fa-user"></i>Login</a>
+                    <div class="top-social">
+                        <a href="https://www.facebook.com/otopginama"><i class="ti-facebook"></i></a>
+                        <a href="https://www.dti.gov.ph/otop"><i class="fa fa-globe"></i></a>
+                    </div>
                 </div>
-                
             </div>
         </div>
         <div class="container">
@@ -78,12 +85,12 @@
                 <div class="row">
                     <div class="col-lg-2 col-md-2">
                         <div class="logo">
-                            <a href="index.php">
+                            <a href="./index.html">
                                 <img src="assets/img/glogo.jpg" alt="">
                             </a>
                         </div>
                     </div>
-                    <div class="mt-5 col-lg-7 col-md-7">
+                    <div class="col-lg-7 col-md-7 mt-4">
                         <div class="advanced-search">
                             <button type="button" class="category-btn">Search Store</button>
                             <div class="input-group">
@@ -92,11 +99,10 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-3 text-right col-md-3 mt-5">
+                    <div class="col-lg-3 text-right col-md-3 mt-4">
                         <ul class="nav-right">
-                            <li class="cart-icon">
-                                <a href="#">
-                                    <i class="icon_bag_alt" style="font-size: 20px;"></i>
+                            <li class="cart-icon"><a href="#">
+                                    <i class="icon_bag_alt"></i>
                                     <span>3</span>
                                 </a>
                                 <div class="cart-hover">
@@ -132,7 +138,7 @@
                                     </div>
                                     <div class="select-total">
                                         <span>total:</span>
-                                        <h5>₱ 120.00</h5>
+                                        <h5>$120.00</h5>
                                     </div>
                                     <div class="select-button">
                                         <a href="#" class="primary-btn view-card">VIEW CARD</a>
@@ -140,7 +146,7 @@
                                     </div>
                                 </div>
                             </li>
-                            <li class="cart-price">₱ 150.00</li>
+                            <li class="cart-price">$150.00</li>
                         </ul>
                     </div>
                 </div>
