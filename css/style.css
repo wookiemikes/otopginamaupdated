@@ -432,7 +432,7 @@ ol {
 }
 
 .inner-header .advanced-search .category-btn {
-	max-width: 30%;
+	max-width: 40%;
 	float: left;
 	background: transparent;
 	border: none;
@@ -459,14 +459,13 @@ ol {
 	position: absolute;
 	right: 11px;
 	top: 10px;
-	content: "3";
 	font-family: "ElegantIcons";
 	font-size: 16px;
 	color: #b2b2b2;
 }
 
 .inner-header .advanced-search .input-group {
-	max-width: 70%;
+	max-width: 72%;
 	height: 100%;
 }
 
