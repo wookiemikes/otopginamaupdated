@@ -1,9 +1,9 @@
-<?php 
+<?php
 
 session_start();
 include 'server/serverconnection.php';
 
- ?>
+?>
 <!DOCTYPE html>
 <html lang="zxx">
 
@@ -29,21 +29,19 @@ include 'server/serverconnection.php';
     <link rel="stylesheet" href="css/jquery-ui.min.css" type="text/css">
     <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="css/style.css" type="text/css">
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
-      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-      crossorigin="anonymous"> 
-      </script>
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous">
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
- <?php 
+<?php
 
-    if (isset($_POST['register'])) { //user registering
-        $user_id = "";
+if (isset($_POST['register'])) { //user registering
+    $user_id = "";
     $_SESSION['username'] = $_POST["username"];
     $_SESSION['password'] = $_POST["password"];
     require 'register1.php';
-    }
- ?>
+}
+?>
 
 <body>
     <!-- Page Preloder -->
@@ -59,28 +57,41 @@ include 'server/serverconnection.php';
                     <div class="mail-service">
                         <div id="clockbox" style="font-size: 14px;"></div>
                         <script type="text/javascript">
-                            var tday=["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
-                            var tmonth=["January","February","March","April","May","June","July","August","September","October","November","December"];
+                            var tday = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+                            var tmonth = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
-                            function GetClock(){
-                            var d=new Date();
-                            var nday=d.getDay(),nmonth=d.getMonth(),ndate=d.getDate(),nyear=d.getFullYear();
-                            var nhour=d.getHours(),nmin=d.getMinutes(),nsec=d.getSeconds(),ap;
+                            function GetClock() {
+                                var d = new Date();
+                                var nday = d.getDay(),
+                                    nmonth = d.getMonth(),
+                                    ndate = d.getDate(),
+                                    nyear = d.getFullYear();
+                                var nhour = d.getHours(),
+                                    nmin = d.getMinutes(),
+                                    nsec = d.getSeconds(),
+                                    ap;
 
-                            if(nhour==0){ap=" AM";nhour=12;}
-                            else if(nhour<12){ap=" AM";}
-                            else if(nhour==12){ap=" PM";}
-                            else if(nhour>12){ap=" PM";nhour-=12;}
+                                if (nhour == 0) {
+                                    ap = " AM";
+                                    nhour = 12;
+                                } else if (nhour < 12) {
+                                    ap = " AM";
+                                } else if (nhour == 12) {
+                                    ap = " PM";
+                                } else if (nhour > 12) {
+                                    ap = " PM";
+                                    nhour -= 12;
+                                }
 
-                            if(nmin<=9) nmin="0"+nmin;
-                            if(nsec<=9) nsec="0"+nsec;
+                                if (nmin <= 9) nmin = "0" + nmin;
+                                if (nsec <= 9) nsec = "0" + nsec;
 
-                            var clocktext=""+tday[nday]+", "+tmonth[nmonth]+" "+ndate+", "+nyear+" "+nhour+":"+nmin+":"+nsec+ap+"";
-                            document.getElementById('clockbox').innerHTML=clocktext;
+                                var clocktext = "" + tday[nday] + ", " + tmonth[nmonth] + " " + ndate + ", " + nyear + " " + nhour + ":" + nmin + ":" + nsec + ap + "";
+                                document.getElementById('clockbox').innerHTML = clocktext;
                             }
 
                             GetClock();
-                            setInterval(GetClock,1000);
+                            setInterval(GetClock, 1000);
                         </script>
                     </div>
                     <div class="phone-service">
@@ -113,7 +124,7 @@ include 'server/serverconnection.php';
                             <button type="button" class="category-btn">Search Store</button>
                             <div class="input-group">
                                 <input type="text" placeholder="What do you need?">
-                                <button type="button"  class=""><i class="ti-search"></i></button>
+                                <button type="button" class=""><i class="ti-search"></i></button>
                             </div>
                         </div>
                     </div>
@@ -219,7 +230,7 @@ include 'server/serverconnection.php';
         </div>
     </div>
     <!-- Register Form Section End -->
-    
+
     <!-- Partner Logo Section Begin -->
     <div class="partner-logo">
         <div class="container">
@@ -288,7 +299,7 @@ include 'server/serverconnection.php';
                         </ul>
                     </div>
                 </div>
-               
+
             </div>
         </div>
         <div class="copyright-reserved">
@@ -296,7 +307,9 @@ include 'server/serverconnection.php';
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="copyright-text">
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | Made with <i class="fa fa-heart-o" aria-hidden="true"></i> by Next Innovations JP
+                            Copyright &copy;<script>
+                                document.write(new Date().getFullYear());
+                            </script> All rights reserved | Made with <i class="fa fa-heart-o" aria-hidden="true"></i> by Next Innovations JP
 
                         </div>
                         <div class="payment-pic">
@@ -307,6 +320,37 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
             </div>
         </div>
     </footer>
+    <!--Modals-->
+    <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header" style="border-bottom: 0 none;">
+                    <h5 class="modal-title" id="exampleModalCenterTitle"><img src="assets/img/websiteimg.png" style="margin: 2px 10px 2px 0px;" alt="" height="30px" width="33px"><b>LOGIN</b></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form action="index.php" method="POST">
+                    <div class="modal-body mt-3 mb-5">
+                        <div class="container-fluid">
+                            <div class="form-group">
+                                <input class="form-control" type="text" id="username" name="username" placeholder="Email/Username">
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control" type="password" id="password" name="password" placeholder="Password">
+                            </div>
+                            <p style="float:right;">No account yet? <a href="register.php" style="color:#db9a37;">Register Here</a></p>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer mt-2" style="border-top: 0 none;">
+                        <button type="button" class="btn btn-light pl-5 pr-5 text-secondary" style="border-radius: 0px;" data-dismiss="modal">CANCEL</button>
+                        <button type="submit" class="btn text-white pl-5 pr-5" style="border-radius: 0px; background-color: #db9a37;">LOGIN</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 
     <!-- Footer Section End -->
 

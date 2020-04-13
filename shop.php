@@ -92,7 +92,7 @@
                 <div class="row">
                     <div class="col-lg-2 col-md-2">
                         <div class="logo">
-                            <a href="./index.html">
+                            <a href="./index.php">
                                 <img src="assets/img/glogo.jpg" alt="">
                             </a>
                         </div>
@@ -602,56 +602,37 @@
     <footer class="footer-section">
         <div class="container">
             <div class="row">
+                <div class="col-lg-6">
+                    <div class="newslatter-item">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d266.1967234322016!2d124.64244732540004!3d8.475059522305841!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x32fff336a094db33%3A0x439b4af793320cc0!2zR2luYW3Dog!5e1!3m2!1sen!2sph!4v1584063936682!5m2!1sen!2sph" width="500" height="310" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                    </div>
+                </div>
                 <div class="col-lg-3">
                     <div class="footer-left">
                         <div class="footer-logo">
-                            <a href="#"><img src="img/footer-logo.png" alt=""></a>
+                            <a href="#"><img src="img/ginafoot.png" alt=""></a>
                         </div>
                         <ul>
-                            <li>Address: 60-49 Road 11378 New York</li>
-                            <li>Phone: +65 11.188.888</li>
-                            <li>Email: hello.colorlib@gmail.com</li>
+                            <li>Address: Rizal St, Cagayan de Oro, Misamis Oriental</li>
+                            <li>Phone: 0977 281 3159</li>
                         </ul>
                         <div class="footer-social">
-                            <a href="#"><i class="fa fa-facebook"></i></a>
-                            <a href="#"><i class="fa fa-instagram"></i></a>
-                            <a href="#"><i class="fa fa-twitter"></i></a>
-                            <a href="#"><i class="fa fa-pinterest"></i></a>
+                            <a href="https://www.facebook.com/otopginama/"><i class="fa fa-facebook"></i></a>
+                            <a href="https://www.instagram.com/explore/locations/2325661814183027/ginama/"><i class="fa fa-instagram"></i></a>
                         </div>
-                    </div>
-                </div>
-                <div class="col-lg-2 offset-lg-1">
-                    <div class="footer-widget">
-                        <h5>Information</h5>
-                        <ul>
-                            <li><a href="#">About Us</a></li>
-                            <li><a href="#">Checkout</a></li>
-                            <li><a href="#">Contact</a></li>
-                            <li><a href="#">Serivius</a></li>
-                        </ul>
                     </div>
                 </div>
                 <div class="col-lg-2">
                     <div class="footer-widget">
-                        <h5>My Account</h5>
+                        <h5>OTOP Ginama</h5>
                         <ul>
-                            <li><a href="#">My Account</a></li>
+                            <li><a href="#">About</a></li>
                             <li><a href="#">Contact</a></li>
-                            <li><a href="#">Shopping Cart</a></li>
                             <li><a href="#">Shop</a></li>
                         </ul>
                     </div>
                 </div>
-                <div class="col-lg-4">
-                    <div class="newslatter-item">
-                        <h5>Join Our Newsletter Now</h5>
-                        <p>Get E-mail updates about our latest shop and special offers.</p>
-                        <form action="#" class="subscribe-form">
-                            <input type="text" placeholder="Enter Your Mail">
-                            <button type="button">Subscribe</button>
-                        </form>
-                    </div>
-                </div>
+
             </div>
         </div>
         <div class="copyright-reserved">
@@ -659,11 +640,10 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="copyright-text">
-                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                             Copyright &copy;<script>
                                 document.write(new Date().getFullYear());
-                            </script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                            </script> All rights reserved | Made with <i class="fa fa-heart-o" aria-hidden="true"></i> by Next Innovations JP
+
                         </div>
                         <div class="payment-pic">
                             <img src="img/payment-method.png" alt="">
@@ -673,6 +653,38 @@
             </div>
         </div>
     </footer>
+
+    <!--Modals-->
+    <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header" style="border-bottom: 0 none;">
+                    <h5 class="modal-title" id="exampleModalCenterTitle"><img src="assets/img/websiteimg.png" style="margin: 2px 10px 2px 0px;" alt="" height="30px" width="33px"><b>LOGIN</b></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form action="index.php" method="POST">
+                    <div class="modal-body mt-3 mb-5">
+                        <div class="container-fluid">
+                            <div class="form-group">
+                                <input class="form-control" type="text" id="username" name="username" placeholder="Email/Username">
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control" type="password" id="password" name="password" placeholder="Password">
+                            </div>
+                            <p style="float:right;">No account yet? <a href="register.php" style="color:#db9a37;">Register Here</a></p>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer mt-2" style="border-top: 0 none;">
+                        <button type="button" class="btn btn-light pl-5 pr-5 text-secondary" style="border-radius: 0px;" data-dismiss="modal">CANCEL</button>
+                        <button type="submit" class="btn text-white pl-5 pr-5" style="border-radius: 0px; background-color: #db9a37;">LOGIN</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
     <!-- Footer Section End -->
 
     <!-- Js Plugins -->
