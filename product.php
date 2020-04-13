@@ -9,10 +9,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="icon" type="image/png" href="assets/img/websiteicon.png">
     <title>OTOP Ginamâ | Empowering the hands of the Filipino People</title>
-
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css?family=Muli:300,400,500,600,700,800,900&display=swap" rel="stylesheet">
-
     <!-- Css Styles -->
     <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
     <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
@@ -30,7 +28,6 @@
     <div id="preloder">
         <div class="loader"></div>
     </div>
-
     <!-- Header Section Begin -->
     <header class="header-section">
         <div class="header-top">
@@ -39,41 +36,50 @@
                     <div class="mail-service">
                         <div id="clockbox" style="font-size: 14px;"></div>
                         <script type="text/javascript">
-                            var tday=["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
-                            var tmonth=["January","February","March","April","May","June","July","August","September","October","November","December"];
+                            var tday = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+                            var tmonth = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
-                            function GetClock(){
-                            var d=new Date();
-                            var nday=d.getDay(),nmonth=d.getMonth(),ndate=d.getDate(),nyear=d.getFullYear();
-                            var nhour=d.getHours(),nmin=d.getMinutes(),nsec=d.getSeconds(),ap;
-
-                            if(nhour==0){ap=" AM";nhour=12;}
-                            else if(nhour<12){ap=" AM";}
-                            else if(nhour==12){ap=" PM";}
-                            else if(nhour>12){ap=" PM";nhour-=12;}
-
-                            if(nmin<=9) nmin="0"+nmin;
-                            if(nsec<=9) nsec="0"+nsec;
-
-                            var clocktext=""+tday[nday]+", "+tmonth[nmonth]+" "+ndate+", "+nyear+" "+nhour+":"+nmin+":"+nsec+ap+"";
-                            document.getElementById('clockbox').innerHTML=clocktext;
+                            function GetClock() {
+                                var d = new Date();
+                                var nday = d.getDay(),
+                                    nmonth = d.getMonth(),
+                                    ndate = d.getDate(),
+                                    nyear = d.getFullYear();
+                                var nhour = d.getHours(),
+                                    nmin = d.getMinutes(),
+                                    nsec = d.getSeconds(),
+                                    ap;
+                                if (nhour == 0) {
+                                    ap = " AM";
+                                    nhour = 12;
+                                } else if (nhour < 12) {
+                                    ap = " AM";
+                                } else if (nhour == 12) {
+                                    ap = " PM";
+                                } else if (nhour > 12) {
+                                    ap = " PM";
+                                    nhour -= 12;
+                                }
+                                if (nmin <= 9) nmin = "0" + nmin;
+                                if (nsec <= 9) nsec = "0" + nsec;
+                                var clocktext = "" + tday[nday] + ", " + tmonth[nmonth] + " " + ndate + ", " + nyear + " " + nhour + ":" + nmin + ":" + nsec + ap + "";
+                                document.getElementById('clockbox').innerHTML = clocktext;
                             }
-
                             GetClock();
-                            setInterval(GetClock,1000);
+                            setInterval(GetClock, 1000);
                         </script>
                     </div>
                     <div class="phone-service">
-                        <i class=" fa fa-phone"></i>
-                        +65 11.188.888
+                        <i class=" 	fa fa-phone"></i>
+                        0977 281 3159
                     </div>
                 </div>
                 <div class="ht-right">
-                    <a href="#" class="login-panel" style="float: center;"><i class="fa fa-user"></i>Register</a>
-                    <a href="#" class="login-panel" style="margin-right: 30px; float: center;"><i class="fa fa-user"></i>Login</a>
+                    <a href="register.php" class="login-panel" style="float: center;"><i class="fa fa-user"></i>Register</a>
+                    <a href="" class="login-panel" style="margin-right: 30px; float: center;" data-toggle="modal" data-target="#loginModal"><i class="fa fa-user"></i>Login</a>
                     <div class="top-social">
-                        <a href="#"><i class="ti-facebook"></i></a>
-                        <a href="#"><i class="ti-twitter-alt"></i></a>
+                        <a href="https://www.facebook.com/otopginama"><i class="ti-facebook"></i></a>
+                        <a href="https://www.dti.gov.ph/otop"><i class="fa fa-globe"></i></a>
                     </div>
                 </div>
             </div>
@@ -93,7 +99,7 @@
                             <button type="button" class="category-btn">Search Store</button>
                             <div class="input-group">
                                 <input type="text" placeholder="What do you need?">
-                                <button type="button"  class=""><i class="ti-search"></i></button>
+                                <button type="button" class=""><i class="ti-search"></i></button>
                             </div>
                         </div>
                     </div>
@@ -152,7 +158,6 @@
         </div>
     </header>
     <!-- Header End -->
-
     <!-- Breadcrumb Section Begin -->
     <div class="breacrumb-section">
         <div class="container">
@@ -168,7 +173,6 @@
         </div>
     </div>
     <!-- Breadcrumb Section Begin -->
-
     <!-- Product Shop Section Begin -->
     <section class="product-shop spad page-details">
         <div class="container">
@@ -224,8 +228,7 @@
                                     <input type="text" id="maxamount">
                                 </div>
                             </div>
-                            <div class="price-range ui-slider ui-corner-all ui-slider-horizontal ui-widget ui-widget-content"
-                                data-min="33" data-max="98">
+                            <div class="price-range ui-slider ui-corner-all ui-slider-horizontal ui-widget ui-widget-content" data-min="33" data-max="98">
                                 <div class="ui-slider-range ui-corner-all ui-widget-header"></div>
                                 <span tabindex="0" class="ui-slider-handle ui-corner-all ui-state-default"></span>
                                 <span tabindex="0" class="ui-slider-handle ui-corner-all ui-state-default"></span>
@@ -307,22 +310,18 @@
                             </div>
                             <div class="product-thumbs">
                                 <div class="product-thumbs-track ps-slider owl-carousel">
-                                    <div class="pt active" data-imgbigurl="img/product-single/product-1.jpg"><img
-                                            src="img/product-single/product-1.jpg" alt=""></div>
-                                    <div class="pt" data-imgbigurl="img/product-single/product-2.jpg"><img
-                                            src="img/product-single/product-2.jpg" alt=""></div>
-                                    <div class="pt" data-imgbigurl="img/product-single/product-3.jpg"><img
-                                            src="img/product-single/product-3.jpg" alt=""></div>
-                                    <div class="pt" data-imgbigurl="img/product-single/product-3.jpg"><img
-                                            src="img/product-single/product-3.jpg" alt=""></div>
+                                    <div class="pt active" data-imgbigurl="img/product-single/product-1.jpg"><img src="img/product-single/product-1.jpg" alt=""></div>
+                                    <div class="pt" data-imgbigurl="img/product-single/product-2.jpg"><img src="img/product-single/product-2.jpg" alt=""></div>
+                                    <div class="pt" data-imgbigurl="img/product-single/product-3.jpg"><img src="img/product-single/product-3.jpg" alt=""></div>
+                                    <div class="pt" data-imgbigurl="img/product-single/product-3.jpg"><img src="img/product-single/product-3.jpg" alt=""></div>
                                 </div>
                             </div>
                         </div>
                         <div class="col-lg-6">
                             <div class="product-details">
                                 <div class="pd-title">
-                                    <span>oranges</span>
-                                    <h3>Pure Pineapple</h3>
+                                    <span>Company Name</span>
+                                    <h3>Product Name</h3>
                                     <a href="#" class="heart-icon"><i class="icon_heart_alt"></i></a>
                                 </div>
                                 <div class="pd-rating">
@@ -564,7 +563,6 @@
         </div>
     </section>
     <!-- Product Shop Section End -->
-
     <!-- Related Products Section End -->
     <div class="related-products spad">
         <div class="container">
@@ -678,7 +676,6 @@
         </div>
     </div>
     <!-- Related Products Section End -->
-
     <!-- Partner Logo Section Begin -->
     <div class="partner-logo">
         <div class="container">
@@ -712,7 +709,6 @@
         </div>
     </div>
     <!-- Partner Logo Section End -->
-
     <!-- Footer Section Begin -->
     <footer class="footer-section">
         <div class="container">
@@ -775,8 +771,10 @@
                     <div class="col-lg-12">
                         <div class="copyright-text">
                             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                            Copyright &copy;<script>
+                                document.write(new Date().getFullYear());
+                            </script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                         </div>
                         <div class="payment-pic">
                             <img src="img/payment-method.png" alt="">
@@ -787,7 +785,6 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
         </div>
     </footer>
     <!-- Footer Section End -->
-
     <!-- Js Plugins -->
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
