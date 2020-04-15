@@ -193,13 +193,27 @@
                     <div class="filter-widget">
                         <h4 class="fw-title">Tags</h4>
                         <div class="fw-tags">
-                            <a href="#">Towel</a>
-                            <a href="#">Shoes</a>
-                            <a href="#">Coat</a>
-                            <a href="#">Dresses</a>
-                            <a href="#">Trousers</a>
-                            <a href="#">Men's hats</a>
-                            <a href="#">Backpack</a>
+                            <a href="#">#shirt</a>
+                            <a href="#">#souvenirs</a>
+                            <a href="#">#processed</a>
+                            <a href="#">#sauce</a>
+                            <a href="#">#jam</a>
+                            <a href="#">#snacks</a>
+                            <a href="#">#personalcare</a>
+                            <a href="#">#cakes</a>
+                            <a href="#">#notebooks</a>
+                            <a href="#">#coffee</a>
+                            <a href="#">#food</a>
+                            <a href="#">#beverages</a>
+                            <a href="#">#spices</a>
+                            <a href="#">#handicrafts</a>
+                            <a href="#">#meat</a>
+                            <a href="#">#canned</a>
+                            <a href="#">#condiments</a>
+                            <a href="#">#ground</a>
+                            <a href="#">#powder</a>
+                            <a href="#">#officesupplies</a>
+                            <a href="#">#others</a>
                         </div>
                     </div>
                 </div>
