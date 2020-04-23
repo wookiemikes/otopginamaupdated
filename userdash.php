@@ -183,19 +183,54 @@
             <div class="row">
                 <div class="col-lg-3 col-md-6 col-sm-8 order-2 order-lg-1 produts-sidebar-filter">
                     <div class="filter-widget">
-                        <h4 class="fw-title">User Profile</h4>
+                        <h4 class="fw-title">My Account</h4>
                         <ul class="filter-catagories">
-                            <li><a href="userdash.php">My Dashboard</a></li>
-                            <li><a href="#userdash-purchases.php">My Purchase</a></li>
+                            <li><a href="userdash.php"><b><i class="fa fa-user-circle-o"></i> My Dashboard</a></b></li>
+                            <li><a href="#userdash-purchases.php"><b><i class="fa fa-shopping-cart"></i> My Purchase</a></b></li>
                         </ul>
                     </div>
                 </div>
                 <div class="col-lg-9 order-1 order-lg-2">
                     <div class="product-show-option">
+                        <div class="row">
+                            <div class="col-lg-7 col-md-7">
+                                <h4 class="fw-title">My Profile</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <table class="table">
+                            <tr>
+                                <td class="align-left" ><b>Username: </b></td>
+                                <td>asdasd</td>
+                            </tr>
+
+                            <tr>
+                                <td ><b>Email Address: </b></td>
+                                <td>asdasd</td>
+                            </tr>
+
+
+                            <tr>
+                                <td ><b>Phone Number: </b></td>
+                                <td>asdasd</td>
+                            </tr>
+
+
+                            <tr>
+                                <td ><b>Home Address: </b></td>
+                                <td>asdasd</td>
+                            </tr>
+
+                            <tr>
+                                <td ><b>Date of Birth: </b></td>
+                                <td>asdasd</td>
+                            </tr>
+                        </table>
+
                     </div>
                 </div>
             </div>
-        </div>
     </section>
     <!-- Product Shop Section End -->
 
