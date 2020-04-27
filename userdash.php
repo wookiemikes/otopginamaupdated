@@ -181,7 +181,7 @@
     <section class="product-shop spad">
         <div class="container">
             <div class="row">
-                <div class="col-lg-3 col-md-6 col-sm-8 order-2 order-lg-1 produts-sidebar-filter">
+                <div class="col-lg-3 col-md-6 col-sm-8 order-2 order-lg-1 produts-sidebar-filter" style="border-right: solid #c6ccc8 .5px;">
                     <div class="filter-widget">
                         <h4 class="fw-title">My Account</h4>
                         <ul class="filter-catagories">
@@ -195,38 +195,48 @@
                         <div class="row">
                             <div class="col-lg-7 col-md-7">
                                 <h4 class="fw-title">My Profile</h4>
+                                <h6 class="text-secondary fw-title">Manage your Profile and Account</h6>
                             </div>
                         </div>
                     </div>
                     <div>
-                        <table class="table">
-                            <tr>
-                                <td class="align-left" ><b>Username: </b></td>
-                                <td>asdasd</td>
-                            </tr>
+                        <div class="row">
+                            <div class="col-md-10">
+                                <table class="table" style="border: solid white;">
+                                    <tr style="border: solid white;">
+                                        <td width="25%" align="right"><b>Username: </b></td>
+                                        <td width="70%"></td>
+                                    </tr>
 
-                            <tr>
-                                <td ><b>Email Address: </b></td>
-                                <td>asdasd</td>
-                            </tr>
-
-
-                            <tr>
-                                <td ><b>Phone Number: </b></td>
-                                <td>asdasd</td>
-                            </tr>
+                                    <tr style="border: solid white;">
+                                        <td width="25%" align="right"><b>Email Address: </b></td>
+                                        <td width="70%">asdasd</td>
+                                    </tr>
 
 
-                            <tr>
-                                <td ><b>Home Address: </b></td>
-                                <td>asdasd</td>
-                            </tr>
+                                    <tr style="border: solid white;">
+                                        <td width="25%" align="right"><b>Phone Number: </b></td>
+                                        <td width="70%">asdasd</td>
+                                    </tr>
 
-                            <tr>
-                                <td ><b>Date of Birth: </b></td>
-                                <td>asdasd</td>
-                            </tr>
-                        </table>
+
+                                    <tr style="border: solid white;">
+                                        <td width="25%" align="right"><b>Home Address: </b></td>
+                                        <td width="70%">asdasd</td>
+                                    </tr>
+
+                                    <tr style="border: solid white;">
+                                        <td width="25%" align="right"><b>Date of Birth: </b></td>
+                                        <td width="70%">asdasd</td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2" align="center"><button class="btn btn-sm btn-primary">Edit Profile</button> </td>
+                                    </tr>
+                                </table>
+
+                            </div>
+                        </div>
+
 
                     </div>
                 </div>

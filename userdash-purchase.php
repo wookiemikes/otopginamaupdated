@@ -181,12 +181,12 @@
     <section class="product-shop spad">
         <div class="container">
             <div class="row">
-                <div class="col-lg-3 col-md-6 col-sm-8 order-2 order-lg-1 produts-sidebar-filter">
+                <div class="col-lg-3 col-md-6 col-sm-8 order-2 order-lg-1 produts-sidebar-filter" style="border-right: solid #c6ccc8 .5px;">
                     <div class="filter-widget">
-                        <h4 class="fw-title">User Profile</h4>
+                        <h4 class="fw-title">My Account</h4>
                         <ul class="filter-catagories">
-                            <li><a href="userdash.php">My Dashboard</a></li>
-                            <li><a href="#userdash-purchases.php">My Purchase</a></li>
+                            <li><a href="userdash.php"><b><i class="fa fa-user-circle-o"></i> My Dashboard</a></b></li>
+                            <li><a href="#userdash-purchases.php"><b><i class="fa fa-shopping-cart"></i> My Purchase</a></b></li>
                         </ul>
                     </div>
                 </div>
