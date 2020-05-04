@@ -108,6 +108,7 @@
                     </div>
                     <div class="col-lg-3 text-right col-md-3 mt-4">
                         <ul class="nav-right">
+                            
                             <li class="cart-icon"><a href="#">
                                     <i class="icon_bag_alt"></i>
                                     <span>3</span>
