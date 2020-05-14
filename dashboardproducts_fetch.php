@@ -2,15 +2,15 @@
 session_start();
 $connect = mysqli_connect("localhost", "root", "", "otopginama");
 
-$columns = array('product_id', 'name', 'desc', 'company_name');
+$columns = array('product_id', 'name', 'company_name', 'price');
 
-$query = "SELECT * FROM product WHERE product_id = '1' ";
+$query = "SELECT product_id,name,company_name,price FROM product WHERE product_id = '1' ";
 
 if(isset($_POST["search"]["value"])){
 	$query .='
-	OR name LIKE "%'.$_POST["search"]["value"].'%" 
-	OR desc LIKE "%'.$_POST["search"]["value"].'%" 
-	OR company_name LIKE "%'.$_POST["search"]["value"].'%"
+	OR name LIKE "%'.$_POST["search"]["value"]. '%" 
+	OR company_name LIKE "%'.$_POST["search"]["value"].'%" 
+	OR price LIKE "%'.$_POST["search"]["value"].'%"
 	';
 }
 
@@ -37,13 +37,13 @@ while($row = mysqli_fetch_array($result)){
   $sub_array = array();
   $sub_array[] = $row["product_id"];	
   $sub_array[] = $row["name"];
-  $sub_array[] = $row["desc"];
   $sub_array[] = $row["company_name"];
+  $sub_array[] = $row["price"];
   $sub_array[] = "<button class ='btn btn-sm btn-info' name ='update' id = 'update' value ='".$row["product_id"]."'>VIEW</button>";
   $data[] = $sub_array;
 }
 function get_all_data($connect){
-	$query = "SELECT * FROM product";
+	$query = "SELECT product_id,name,company_name,price FROM product";
 	$result = mysqli_query($connect, $query);
 	return mysqli_num_rows($result);
    }
