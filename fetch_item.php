@@ -2,7 +2,7 @@
 
 //fetch_item.php
 
-include('server/serverconnection.php');
+include('server/serverpdo.php');
 
 $query = "SELECT * FROM product ORDER BY product_id DESC";
 
@@ -10,7 +10,7 @@ $statement = $connect->prepare($query);
 
 if($statement->execute())
 {
-	$result = $statement->fetch();
+	$result = $statement->fetchAll();
 	$output = '';
 	foreach($result as $row)
 	{

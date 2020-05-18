@@ -112,6 +112,30 @@
                                     <i class="icon_bag_alt"></i>
                                     <span>3</span>
                                 </a>
+                                <div class="cart-hover">
+                                    <div class="select-items">
+                                        <div class="table-responsive">
+                                            <table class="table table-bordered table-striped">
+                                                <tr>
+                                                    <th>Product Name</th>
+                                                    <th>Product Name</th>
+                                                    <th>Product Name</th>
+                                                    <th>Product Name</th>
+                                                    <th>Product Name</th>
+                                                </tr>
+                                            </table>
+                                        </div>
+
+                                    </div>
+                                    <div class="select-total">
+                                        <span>total:</span>
+                                        <h5>$120.00</h5>
+                                    </div>
+                                    <div class="select-button">
+                                        <a href="#" class="primary-btn view-card">VIEW CARD</a>
+                                        <a href="#" class="primary-btn checkout-btn">CHECK OUT</a>
+                                    </div>
+                                </div>
                             </li>
                             <li class="cart-price">$150.00</li>
                         </ul>
