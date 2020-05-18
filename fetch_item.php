@@ -2,30 +2,44 @@
 
 //fetch_item.php
 
-include('database_connection.php');
+include('server/serverconnection.php');
 
-$query = "SELECT * FROM tbl_product ORDER BY id DESC";
+$query = "SELECT * FROM product ORDER BY product_id DESC";
 
 $statement = $connect->prepare($query);
 
 if($statement->execute())
 {
-	$result = $statement->fetchAll();
+	$result = $statement->fetch();
 	$output = '';
 	foreach($result as $row)
 	{
 		$output .= '
-		<div class="col-md-3" style="margin-top:12px;">  
-            <div style="border:1px solid #333; background-color:#f1f1f1; border-radius:5px; padding:16px; height:350px;" align="center">
-            	<img src="images/'.$row["image"].'" class="img-responsive" /><br />
-            	<h4 class="text-info">'.$row["name"].'</h4>
-            	<h4 class="text-danger">$ '.$row["price"] .'</h4>
-            	<input type="text" name="quantity" id="quantity' . $row["id"] .'" class="form-control" value="1" />
-            	<input type="hidden" name="hidden_name" id="name'.$row["id"].'" value="'.$row["name"].'" />
-            	<input type="hidden" name="hidden_price" id="price'.$row["id"].'" value="'.$row["price"].'" />
-            	<input type="button" name="add_to_cart" id="'.$row["id"].'" style="margin-top:5px;" class="btn btn-success form-control add_to_cart" value="Add to Cart" />
+		<div class="col-lg-4 col-sm-6">
+            <div class="product-item">
+              <div class="pi-pic">
+                <img src="img/products/product-9.jpg" alt="">
+                <div class="icon">
+                  <i class="icon_heart_alt"></i>
+                </div>
+                <ul>
+                  <li class="w-icon active"><a href="#"><i class="icon_bag_alt"></i></a></li>
+                  <li class="quick-view"><a href="#">+ Quick View</a></li>
+                  <li class="w-icon"><a href="#"><i class="fa fa-random"></i></a></li>
+                </ul>
+              </div>
+              <div class="pi-text">
+                <div class="catagory-name">Shoes</div>
+                <a href="#">
+                  <h5>Converse Shoes</h5>
+                </a>
+                <div class="product-price">
+                  $34.00
+                  <span>$35.00</span>
+                </div>
+              </div>
             </div>
-        </div>
+          </div>
 		';
 	}
 	echo $output;
