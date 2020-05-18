@@ -12,8 +12,9 @@
 				$a = $_REQUEST['tags'];
 				$tags = implode(", " ,$a);
 				$date_added = date('Y-m-d');
-				$connect->query("INSERT INTO `product` (`product_id`, `name`, `desc`, `company_name`, `price`, `date_added`, `tags`) 
+				$addproduct = $connect->query("INSERT INTO `product` (`product_id`, `name`, `desc`, `company_name`, `price`, `tags`, `date_added`) 
 				VALUES ('', '".$name."', '".$desc."', '".$company_name."', '".$price."', '".$tags."', '".$date_added."');");
+
 
 
 

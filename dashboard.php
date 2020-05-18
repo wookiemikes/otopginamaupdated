@@ -242,48 +242,27 @@
           <div class="col-md-12">
             <div class="card ">
               <div class="card-header ">
-                <h5 class="card-title">Sales</h5>
-                <p class="card-category">B.Y. 2020-2021</p>
+                <h5 class="card-title">Hot Items <i class="fa fa-fire" aria-hidden="true"></i></h5>
+                <p class="card-category">Most Sold items</p>
               </div>
               <div class="card-body ">
-                <canvas id=chartHours width="400" height="100"></canvas>
+                
               </div>
               <div class="card-footer ">
                 <hr>
                 <div class="stats">
-                  <i class="fa fa-history"></i> Updated
+                  <i class="fa fa-history"></i> Refresh
                 </div>
               </div>
             </div>
           </div>
         </div>
         <div class="row">
-          <div class="col-md-4">
-            <div class="card ">
-              <div class="card-header ">
-                <h5 class="card-title">Product Statistics</h5>
-                <p class="card-category">Last Month Performance</p>
-              </div>
-              <div class="card-body ">
-              </div>
-              <div class="card-footer ">
-                <div class="legend">
-                  <i class="fa fa-circle text-primary"></i> Opened
-                  <i class="fa fa-circle text-warning"></i> Read
-                  <i class="fa fa-circle text-danger"></i> Deleted
-                  <i class="fa fa-circle text-gray"></i> Unopened
-                </div>
-                <hr>
-                <div class="stats">
-                  <i class="fa fa-calendar"></i> Number of emails sent
-                </div>
-              </div>
-            </div>
-          </div>
+          
           <div class="col-md-8">
             <div class="card card-chart">
               <div class="card-header">
-                <h5 class="card-title">NASDAQ: AAPL</h5>
+                <h5 class="card-title">Top Rated Products <i class="fa fa-star"></i></h5>
                 <p class="card-category">Line Chart with Points</p>
               </div>
               <div class="card-body">
@@ -296,7 +275,24 @@
                 </div>
                 <hr/>
                 <div class="card-stats">
-                  <i class="fa fa-check"></i> Data information certified
+                  <i class="fa fa-history"></i> Refresh
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card ">
+              <div class="card-header ">
+                <h5 class="card-title">Sales</h5>
+                <p class="card-category">Today's Total Revenue</p>
+              </div>
+              <div class="card-body ">
+              </div>
+              <div class="card-footer ">
+
+                <hr>
+                <div class="stats">
+                  <a href="#" data-toggle="modal" data-target="#generateModal"><i class="fa fa-history"></i> Refresh</a>
                 </div>
               </div>
             </div>
@@ -332,7 +328,27 @@
       </footer>
     </div>
   </div>
-
+  <!--Refresh Sales-->
+  <div class="modal fade" id="generateModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header" style="border-bottom: 0 none;">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <form action="dashboard.php" method="POST">
+          <div class="modal-body">
+          Are you sure?
+          </div>
+          <div class="modal-footer mt-2" style="border-top: 0 none;">
+            <button type="button" class="btn btn-light pl-5 pr-5 text-secondary" style="border-radius: 0px;" data-dismiss="modal">CANCEL</button>
+            <button type="submit" class="btn text-white pl-5 pr-5" style="border-radius: 0px; background-color: #db9a37;">Generate</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
   <!--Logout Modal -->
   <div class="modal fade" id="logoutmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
@@ -355,6 +371,7 @@
       </div>
     </div>
   </div>
+
   <!--   Core JS Files   -->
   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>

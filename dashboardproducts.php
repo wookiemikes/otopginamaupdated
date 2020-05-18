@@ -154,7 +154,7 @@
                   <div class="col-7 col-md-8">
                     <div class="numbers">
                       <p class="card-category">Total Products</p>
-                      <p class="card-title">150
+                      <p class="card-title"><?php echo $total_products; ?>
                         <p>
                     </div>
                   </div>
@@ -163,7 +163,7 @@
               <div class="card-footer ">
                 <hr>
                 <div class="stats">
-                  <i class="fa fa-refresh"></i> Update Now
+                  <a href="dashboardproducts.php"><i class="fa fa-refresh"></i> Update Now</a>
                 </div>
               </div>
             </div>

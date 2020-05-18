@@ -150,7 +150,7 @@
                   <div class="col-7 col-md-8">
                     <div class="numbers">
                       <p class="card-category">Total Stores</p>
-                      <p class="card-title">150
+                      <p class="card-title"><?php echo $total_establishments; ?>
                         <p>
                     </div>
                   </div>
