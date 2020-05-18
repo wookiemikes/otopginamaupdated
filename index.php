@@ -14,12 +14,7 @@
   <link href="https://fonts.googleapis.com/css?family=Muli:300,400,500,600,700,800,900&display=swap" rel="stylesheet">
 
   <!-- Css Styles -->
-  <style>
-    .popover {
-      width: 100%;
-      max-width: 800px;
-    }
-  </style>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
   <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
   <link rel="stylesheet" href="css/themify-icons.css" type="text/css">
@@ -30,12 +25,9 @@
   <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
   <link rel="stylesheet" href="css/style.css" type="text/css">
   <link rel="stylesheet" href="css/rapidstyle.css" type="text/css">
-  <script src="js/jquery.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <script type="text/javascript">
-    $("[data-toggle=popover]").popover();
-  </script>
-
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -126,15 +118,15 @@
           <div class="col-lg-3 text-right col-md-3 mt-4 ">
             <ul class="nav-right nav navbar-nav">
               <li>
-                <button type="button" class="btn btn-secondary" data-container="body" data-toggle="popover" data-placement="bottom" data-content="Vivamus
-                sagittis lacus vel augue laoreet rutrum faucibus.">
-                  Popover on bottom
-                </button>
+                <a type="button" id="cart-popover" class="btn" data-placement="bottom" title="Shopping Cart">
+                  <span><i class="icon_bag_alt"></i></span>
+                  <span class="badge"></span>
+                  <span class="total_price">$ 0.00</span>
+                </a>
               </li>
             </ul>
             <div id="popover_content_wrapper" style="display: none">
-              <span id="cart_tables"></span>
-
+              <div id="cart_details"></div>
               <div align="right">
                 <a href="#" class="btn btn-primary" id="check_out_cart">
                   <span class="glyphicon glyphicon-shopping-cart"></span> Check out
@@ -599,7 +591,110 @@
   <!-- Footer Section End -->
 
   <!-- Js Plugins -->
-  <script type="text/javascript">
+  <script>
+    $(document).ready(function() {
+
+      load_product();
+
+      load_cart_data();
+
+      function load_product() {
+        $.ajax({
+          url: "fetch_item.php",
+          method: "POST",
+          success: function(data) {
+            $('#display_item').html(data);
+          }
+        });
+      }
+
+      function load_cart_data() {
+        $.ajax({
+          url: "fetch_cart.php",
+          method: "POST",
+          dataType: "json",
+          success: function(data) {
+            $('#cart_details').html(data.cart_details);
+            $('.total_price').text(data.total_price);
+            $('.badge').text(data.total_item);
+          }
+        });
+      }
+
+      $('#cart-popover').popover({
+        html: true,
+        container: 'body',
+        content: function() {
+          return $('#popover_content_wrapper').html();
+        }
+      });
+
+      $(document).on('click', '.add_to_cart', function() {
+        var product_id = $(this).attr("id");
+        var product_name = $('#name' + product_id + '').val();
+        var product_price = $('#price' + product_id + '').val();
+        var product_quantity = $('#quantity' + product_id).val();
+        var action = "add";
+        if (product_quantity > 0) {
+          $.ajax({
+            url: "action.php",
+            method: "POST",
+            data: {
+              product_id: product_id,
+              product_name: product_name,
+              product_price: product_price,
+              product_quantity: product_quantity,
+              action: action
+            },
+            success: function(data) {
+              load_cart_data();
+              alert("Item has been Added into Cart");
+            }
+          });
+        } else {
+          alert("lease Enter Number of Quantity");
+        }
+      });
+
+      $(document).on('click', '.delete', function() {
+        var product_id = $(this).attr("id");
+        var action = 'remove';
+        if (confirm("Are you sure you want to remove this product?")) {
+          $.ajax({
+            url: "action.php",
+            method: "POST",
+            data: {
+              product_id: product_id,
+              action: action
+            },
+            success: function() {
+              load_cart_data();
+              $('#cart-popover').popover('hide');
+              alert("Item has been removed from Cart");
+            }
+          })
+        } else {
+          return false;
+        }
+      });
+
+      $(document).on('click', '#clear_cart', function() {
+        var action = 'empty';
+        $.ajax({
+          url: "action.php",
+          method: "POST",
+          data: {
+            action: action
+          },
+          success: function() {
+            load_cart_data();
+            $('#cart-popover').popover('hide');
+            alert("Your Cart has been clear");
+          }
+        });
+      });
+
+    });
   </script>
   <script src="js/jquery-3.3.1.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
