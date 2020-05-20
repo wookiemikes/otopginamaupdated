@@ -14,8 +14,6 @@
 		if ($data->num_rows >0){
 			$_SESSION['loggedIN'] = '1';
 			$_SESSION['username'] = $username;
-			header('Location:index.php');
-			exit("Login Success");
 		}else{
 			exit("Login Failed");	
 		}

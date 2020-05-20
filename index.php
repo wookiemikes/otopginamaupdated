@@ -1,3 +1,6 @@
+<?php 
+  include "login1.php";
+?>
 <!DOCTYPE html>
 <html lang="zxx">
 
@@ -28,6 +31,35 @@
   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $("#adminlogin").on('click', function() {
+        var username = $('#username').val();
+        var password = $('#password').val();
+
+        if (username == "" || password == "")
+          alert('Wrong Input, Please check your username or password');
+        else {
+          $.ajax({
+            url: 'login1.php',
+            method: 'POST',
+            data: {
+              adminlogin: 1,
+              uname: username,
+              pwd: password
+            },
+            success: function(response) {
+              $("#response").html(response);
+
+              if (response.indexOf('success') >= 0)
+                window.location = 'index.php';
+            },
+            datatype: 'text'
+          });
+        }
+      });
+    });
+  </script>
 </head>
 
 <body>
@@ -87,8 +119,19 @@
           </div>
         </div>
         <div class="ht-right">
-          <a href="register.php" class="login-panel" style="float: center;"><i class="fa fa-user"></i>Register</a>
-          <a href="" class="login-panel" style="margin-right: 30px; float: center;" data-toggle="modal" data-target="#loginModal"><i class="fa fa-user"></i>Login</a>
+          <?php
+              if (isset($_SESSION['loggedIN'])) {
+                 $loggedIN = $_SESSION['username'];
+                 print("<a href='' class='login-panel' style='float: center; data-toggle='modal' data-target='#logoutModal'><i class='fa fa-user'> Logout</i></a>
+                 <a href='' class='login-panel' style='margin-right: 30px; float: center;' data-toggle='modal' data-target='#logoutModal'><i class='fa fa-user'></i>Welcome Back, $loggedIN</a>");
+                # code...
+              } else {
+                   print('<a href="register.php" class="login-panel" style="float: center;"><i class="fa fa-user"></i>Register</a>
+                  <a href="" class="login-panel" style="margin-right: 30px; float: center;" data-toggle="modal" data-target="#loginModal"><i class="fa fa-user"></i>Login</a>');
+              }
+          ?>
+
+
           <div class="top-social">
             <a href="https://www.facebook.com/otopginama"><i class="ti-facebook"></i></a>
             <a href="https://www.dti.gov.ph/otop"><i class="fa fa-globe"></i></a>
@@ -209,9 +252,9 @@
         </div>
       </div>
       <div class="product-list">
-        
-          <div id="display_item">
-          </div>
+
+        <div id="display_item">
+        </div>
         <div class="loading-more">
           <i class="icon_loading"></i>
           <a href="#">
@@ -355,7 +398,7 @@
           </div>
           <div class="modal-footer mt-2" style="border-top: 0 none;">
             <button type="button" class="btn btn-light pl-5 pr-5 text-secondary" style="border-radius: 0px;" data-dismiss="modal">CANCEL</button>
-            <button type="submit" class="btn text-white pl-5 pr-5" style="border-radius: 0px; background-color: #db9a37;">LOGIN</button>
+            <button type="submit" name="login" id="login" class="btn text-white pl-5 pr-5" style="border-radius: 0px; background-color: #db9a37;">LOGIN</button>
           </div>
         </form>
       </div>
