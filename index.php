@@ -209,10 +209,9 @@
         </div>
       </div>
       <div class="product-list">
-        <div class="row">
+        
           <div id="display_item">
           </div>
-        </div>
         <div class="loading-more">
           <i class="icon_loading"></i>
           <a href="#">
