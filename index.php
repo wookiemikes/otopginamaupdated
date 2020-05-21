@@ -1,5 +1,6 @@
-<?php 
-  include "login1.php";
+<?php
+include "login1.php";
+include 'logout.php';
 ?>
 <!DOCTYPE html>
 <html lang="zxx">
@@ -120,15 +121,15 @@
         </div>
         <div class="ht-right">
           <?php
-              if (isset($_SESSION['loggedIN'])) {
-                 $loggedIN = $_SESSION['username'];
-                 print("<a href='' class='login-panel' style='float: center; data-toggle='modal' data-target='#logoutModal'><i class='fa fa-user'> Logout</i></a>
-                 <a href='' class='login-panel' style='margin-right: 30px; float: center;' data-toggle='modal' data-target='#logoutModal'><i class='fa fa-user'></i>Welcome Back, $loggedIN</a>");
-                # code...
-              } else {
-                   print('<a href="register.php" class="login-panel" style="float: center;"><i class="fa fa-user"></i>Register</a>
+          if (isset($_SESSION['loggedIN'])) {
+            $loggedIN = $_SESSION['username'];
+            print("<a href='#' class='login-panel' style='float: center; data-toggle='modal' data-target='#logoutModal'><i class='fa fa-user'> Logout</i></a>
+                 <a href='#' class='login-panel' style='margin-right: 30px; float: center;' data-toggle='modal' data-target='#logoutModal'><i class='fa fa-user'></i>Welcome Back, $loggedIN</a>");
+            # code...
+          } else {
+            print('<a href="register.php" class="login-panel" style="float: center;"><i class="fa fa-user"></i>Register</a>
                   <a href="" class="login-panel" style="margin-right: 30px; float: center;" data-toggle="modal" data-target="#loginModal"><i class="fa fa-user"></i>Login</a>');
-              }
+          }
           ?>
 
 
@@ -399,6 +400,29 @@
           <div class="modal-footer mt-2" style="border-top: 0 none;">
             <button type="button" class="btn btn-light pl-5 pr-5 text-secondary" style="border-radius: 0px;" data-dismiss="modal">CANCEL</button>
             <button type="submit" name="login" id="login" class="btn text-white pl-5 pr-5" style="border-radius: 0px; background-color: #db9a37;">LOGIN</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!--Logout Modal -->
+  <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalCenterTitle">Logout</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          Are you sure?
+        </div>
+        <form method="post" action="index.php">
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">No, Nevermind</button>
+            <button type="submit" name="logout" class="btn btn-primary">Yes, Let me go</button>
           </div>
         </form>
       </div>
