@@ -123,8 +123,7 @@ include 'logout.php';
           <?php
           if (isset($_SESSION['loggedIN'])) {
             $loggedIN = $_SESSION['username'];
-            print("<a href='#' class='login-panel' style='float: center; data-toggle='modal' data-target='#logoutModal'><i class='fa fa-user'> Logout</i></a>
-                 <a href='#' class='login-panel' style='margin-right: 30px; float: center;' data-toggle='modal' data-target='#logoutModal'><i class='fa fa-user'></i>Welcome Back, $loggedIN</a>");
+            print("<a href='#' class='login-panel' style='margin-right: 30px; float: center;' data-toggle='modal' data-target='#logoutModal'><i class='fa fa-user'></i>Welcome Back, $loggedIN</a>");
             # code...
           } else {
             print('<a href="register.php" class="login-panel" style="float: center;"><i class="fa fa-user"></i>Register</a>

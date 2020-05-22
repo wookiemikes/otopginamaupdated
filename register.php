@@ -100,8 +100,16 @@ if (isset($_POST['register'])) { //user registering
                     </div>
                 </div>
                 <div class="ht-right">
-                    <a href="register.php" class="login-panel" style="float: center;"><i class="fa fa-user"></i>Register</a>
-                    <a href="" class="login-panel" style="margin-right: 30px; float: center;" data-toggle="modal" data-target="#loginModal"><i class="fa fa-user"></i>Login</a>
+                    <?php
+                    if (isset($_SESSION['loggedIN'])) {
+                        $loggedIN = $_SESSION['username'];
+                        print("<a href='#' class='login-panel' style='margin-right: 30px; float: center;' data-toggle='modal' data-target='#logoutModal'><i class='fa fa-user'></i>Welcome Back, $loggedIN</a>");
+                        # code...
+                    } else {
+                        print('<a href="register.php" class="login-panel" style="float: center;"><i class="fa fa-user"></i>Register</a>
+                  <a href="" class="login-panel" style="margin-right: 30px; float: center;" data-toggle="modal" data-target="#loginModal"><i class="fa fa-user"></i>Login</a>');
+                    }
+                    ?>
                     <div class="top-social">
                         <a href="https://www.facebook.com/otopginama"><i class="ti-facebook"></i></a>
                         <a href="https://www.dti.gov.ph/otop"><i class="fa fa-globe"></i></a>
