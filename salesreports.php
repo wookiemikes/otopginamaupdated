@@ -1,17 +1,17 @@
-<?php 
+<?php
 
-  session_start();
+session_start();
 
-  if (!isset($_SESSION['loggedIN'])) {
-    # code...
-    header('Location: dashboardlogin.php');
-    exit();
-  }
+if (!isset($_SESSION['loggedIN'])) {
+  # code...
+  header('Location: dashboardlogin.php');
+  exit();
+}
 
-  include 'dashboardreports.php';
-  include 'dashboardlogout.php';
+include 'salesreports1.php';
+include 'dashboardlogout.php';
 
- ?>
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +26,7 @@
   </title>
   <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
   <!--     Fonts and icons     -->
-   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
   <!-- CSS Files -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
@@ -36,11 +36,9 @@
   <link href="assets/demo/demo.css" rel="stylesheet" />
   <link href="vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
 
-  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
-  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-  crossorigin="anonymous"> 
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous">
   </script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 
 <body class="">
@@ -151,7 +149,7 @@
                   <div class="col-7 col-md-8">
                     <div class="numbers">
                       <p class="card-category">Daily</p>
-                      <p class="card-title">₱
+                      <p class="card-title">₱ <?php echo $total_daily_sales, ".00"; ?>
                         <p>
                     </div>
                   </div>
@@ -160,7 +158,7 @@
               <div class="card-footer ">
                 <hr>
                 <div class="stats">
-                  <i class="fa fa-refresh"></i> Update Now
+                  <i class="fa fa-refresh"></i><a href="#" data-toggle="modal" data-target="#dailyModal">Update Now</a>
                 </div>
               </div>
             </div>
@@ -177,7 +175,7 @@
                   <div class="col-7 col-md-8">
                     <div class="numbers">
                       <p class="card-category">Weekly</p>
-                      <p class="card-title">₱
+                      <p class="card-title">₱ <?php echo $total_weekly_sales, ".00"; ?>
                         <p>
                     </div>
                   </div>
@@ -186,7 +184,7 @@
               <div class="card-footer ">
                 <hr>
                 <div class="stats">
-                  <i class="fa fa-refresh"></i> Update Now
+                  <i class="fa fa-refresh"></i><a href="#" data-toggle="modal" data-target="#weeklyModal">Update Now</a>
                 </div>
               </div>
             </div>
@@ -202,7 +200,7 @@
                   </div>
                   <div class="col-7 col-md-8">
                     <div class="numbers">
-                      <p class="card-category">Monthly  </p>
+                      <p class="card-category">Monthly </p>
                       <p class="card-title"> ₱
                         <p>
                     </div>
@@ -212,7 +210,7 @@
               <div class="card-footer ">
                 <hr>
                 <div class="stats">
-                  <i class="fa fa-refresh"></i> Update now
+                  <i class="fa fa-refresh"></i><a href="#" data-toggle="modal" data-target="#monthlyModal">Update Now</a>
                 </div>
               </div>
             </div>
@@ -222,9 +220,13 @@
           <div class="col-md-12">
             <div class="card ">
               <div class="card-header col-md-12 col-sm-12 row ">
-                <div class="col-md-6 col-sm-6"><h5 class="card-title">Hot Items <i class="fa fa-fire text-danger" aria-hidden="true"></i></h5></div>
+                <div class="col-md-6 col-sm-6">
+                  <h5 class="card-title">Hot Items <i class="fa fa-fire text-danger" aria-hidden="true"></i></h5>
+                </div>
                 <div class="col-md-6 col-sm-6"><button class="btn btn-sm btn-success" style="float: right;">Generate Excel File</button></div>
-                <div class="col-md-6"><p class="card-category">Most Sold items</p></div>  
+                <div class="col-md-6">
+                  <p class="card-category">Most Sold items</p>
+                </div>
               </div>
               <div class="card-body ">
                 <div class="table-responsive">
@@ -249,7 +251,7 @@
                     </tbody>
                   </table>
                 </div>
-                
+
               </div>
               <div class="card-footer ">
                 <hr>
@@ -261,7 +263,7 @@
           </div>
         </div>
         <div class="row">
-          
+
           <div class="col-md-12">
             <div class="card card-chart">
               <div class="card-header">
@@ -272,7 +274,7 @@
                 <canvas id="speedChart" width="400" height="100"></canvas>
               </div>
               <div class="card-footer">
-                <hr/>
+                <hr />
                 <div class="card-stats">
                   <i class="fa fa-history"></i> Refresh
                 </div>
@@ -338,7 +340,7 @@
         </div>
         <form action="dashboard.php" method="POST">
           <div class="modal-body">
-          Are you sure?
+            Are you sure?
           </div>
           <div class="modal-footer mt-2" style="border-top: 0 none;">
             <button type="button" class="btn btn-light pl-5 pr-5 text-secondary" style="border-radius: 0px;" data-dismiss="modal">CANCEL</button>
@@ -370,26 +372,88 @@
       </div>
     </div>
   </div>
+  <!--Daily Generate-->
+  <div class="modal fade" id="dailyModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Generate</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          Generate Daily Total Sales?
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Generate</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="weeklyModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Generate</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          Generate Weekly Sales?
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Generate</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="monthlyModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Generate</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          Generate Monthly Total Sales
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Generate</button>
+        </div>
+      </div>
+    </div>
+  </div>
   <script>
-    $(document).ready(function (){
+    $(document).ready(function() {
       fetch_data();
-      function fetch_data(){
+
+      function fetch_data() {
         var dataTable = $('#salesprod_table').DataTable({
-          "processing" : true,
-          "serverSide" : true,
-          "columnDefs": [{ "orderable": false, "targets":[0,1]}],
-          "order" : [],
-          "ajax" : {
+          "processing": true,
+          "serverSide": true,
+          "columnDefs": [{
+            "orderable": false,
+            "targets": [0, 1]
+          }],
+          "order": [],
+          "ajax": {
             url: "sales.php",
-            type:"POST"
+            type: "POST"
           }
         });
       }
-    }); 
+    });
   </script>
 
   <!--   Core JS Files   -->
-   <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
   <!-- Core plugin JavaScript-->
