@@ -26,15 +26,21 @@
   </title>
   <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
   <!--     Fonts and icons     -->
-  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
+   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
   <!-- CSS Files -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
   <link href="assets/css/paper-dashboard.css?v=2.0.0" rel="stylesheet" />
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
   <!-- CSS Just for demo purpose, don't include it in your project -->
   <link href="assets/demo/demo.css" rel="stylesheet" />
+  <link href="vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
+
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"> 
+  </script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>  
 </head>
 
 <body class="">
@@ -106,7 +112,7 @@
                 <span class="navbar-toggler-bar bar3"></span>
               </button>
             </div>
-            <a class="navbar-brand" href="#pablo">Admin Dashboard </a>
+            <a class="navbar-brand" href="#pablo">Admin Dashboard / Sales Reports</a>
           </div>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-bar navbar-kebab"></span>
@@ -133,19 +139,19 @@
 </div> -->
       <div class="content">
         <div class="row">
-          <div class="col-lg-3 col-md-6 col-sm-6">
+          <div class="col-lg-4 col-md-6 col-sm-6">
             <div class="card card-stats">
               <div class="card-body ">
                 <div class="row">
                   <div class="col-5 col-md-4">
                     <div class="icon-big text-center icon-warning">
-                      <i class="nc-icon nc-tag-content text-primary"></i>
+                      <i class="nc-icon nc-money-coins text-primary"></i>
                     </div>
                   </div>
                   <div class="col-7 col-md-8">
                     <div class="numbers">
-                      <p class="card-category">Total Products</p>
-                      <p class="card-title"><?php echo "$total_products"; ?>
+                      <p class="card-category">Daily</p>
+                      <p class="card-title">₱
                         <p>
                     </div>
                   </div>
@@ -159,7 +165,7 @@
               </div>
             </div>
           </div>
-          <div class="col-lg-3 col-md-6 col-sm-6">
+          <div class="col-lg-4 col-md-6 col-sm-6">
             <div class="card card-stats">
               <div class="card-body ">
                 <div class="row">
@@ -170,8 +176,8 @@
                   </div>
                   <div class="col-7 col-md-8">
                     <div class="numbers">
-                      <p class="card-category">Companies</p>
-                      <p class="card-title"><?php echo "$total_establishments"; ?>
+                      <p class="card-category">Weekly</p>
+                      <p class="card-title">₱
                         <p>
                     </div>
                   </div>
@@ -180,50 +186,24 @@
               <div class="card-footer ">
                 <hr>
                 <div class="stats">
-                  <i class="fa fa-calendar-o"></i> Last day
+                  <i class="fa fa-refresh"></i> Update Now
                 </div>
               </div>
             </div>
           </div>
-          <div class="col-lg-3 col-md-6 col-sm-6">
+          <div class="col-lg-4 col-md-6 col-sm-6">
             <div class="card card-stats">
               <div class="card-body ">
                 <div class="row">
                   <div class="col-5 col-md-4">
                     <div class="icon-big text-center icon-warning">
-                      <i class="nc-icon nc-vector text-warning"></i>
+                      <i class="nc-icon nc-money-coins text-warning"></i>
                     </div>
                   </div>
                   <div class="col-7 col-md-8">
                     <div class="numbers">
-                      <p class="card-category">Pending Orders</p>
-                      <p class="card-title"><?php echo "$total_pending"; ?>
-                        <p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="card-footer ">
-                <hr>
-                <div class="stats">
-                  <i class="fa fa-clock-o"></i> In the last hour
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6 col-sm-6">
-            <div class="card card-stats">
-              <div class="card-body ">
-                <div class="row">
-                  <div class="col-5 col-md-4">
-                    <div class="icon-big text-center icon-warning">
-                      <i class="nc-icon nc-box-2 text-info"></i>
-                    </div>
-                  </div>
-                  <div class="col-7 col-md-8">
-                    <div class="numbers">
-                      <p class="card-category">Delivered</p>
-                      <p class="card-title"> <?php echo "$total_delivered"; ?>
+                      <p class="card-category">Monthly  </p>
+                      <p class="card-title"> ₱
                         <p>
                     </div>
                   </div>
@@ -241,17 +221,40 @@
         <div class="row">
           <div class="col-md-12">
             <div class="card ">
-              <div class="card-header ">
-                <h5 class="card-title">Hot Items <i class="fa fa-fire" aria-hidden="true"></i></h5>
-                <p class="card-category">Most Sold items</p>
+              <div class="card-header col-md-12 col-sm-12 row ">
+                <div class="col-md-6 col-sm-6"><h5 class="card-title">Hot Items <i class="fa fa-fire text-danger" aria-hidden="true"></i></h5></div>
+                <div class="col-md-6 col-sm-6"><button class="btn btn-sm btn-success" style="float: right;">Generate Excel File</button></div>
+                <div class="col-md-6"><p class="card-category">Most Sold items</p></div>  
               </div>
               <div class="card-body ">
+                <div class="table-responsive">
+                  <table class="table table-bordered" id="salesprod_table" width="100%" cellspacing="0">
+                    <thead>
+                      <tr>
+                        <th>sales id</th>
+                        <th>product name</th>
+                        <th>revenue</th>
+                        <th>date updated</th>
+                      </tr>
+                    </thead>
+                    <tfoot>
+                      <tr>
+                        <th>sales id</th>
+                        <th>product name</th>
+                        <th>revenue</th>
+                        <th>date updated</th>
+                      </tr>
+                    </tfoot>
+                    <tbody>
+                    </tbody>
+                  </table>
+                </div>
                 
               </div>
               <div class="card-footer ">
                 <hr>
                 <div class="stats">
-                  <i class="fa fa-history"></i> Refresh
+                  <i class="fa fa-history"></i> <a href="salesreports.php">Refresh</a>
                 </div>
               </div>
             </div>
@@ -259,20 +262,16 @@
         </div>
         <div class="row">
           
-          <div class="col-md-8">
+          <div class="col-md-12">
             <div class="card card-chart">
               <div class="card-header">
-                <h5 class="card-title">Top Rated Products <i class="fa fa-star"></i></h5>
+                <h5 class="card-title">Top Rated Products <i class="fa fa-star text-warning"></i></h5>
                 <p class="card-category">Line Chart with Points</p>
               </div>
               <div class="card-body">
                 <canvas id="speedChart" width="400" height="100"></canvas>
               </div>
               <div class="card-footer">
-                <div class="chart-legend">
-                  <i class="fa fa-circle text-info"></i> Tesla Model S
-                  <i class="fa fa-circle text-warning"></i> BMW 5 Series
-                </div>
                 <hr/>
                 <div class="card-stats">
                   <i class="fa fa-history"></i> Refresh
@@ -371,17 +370,37 @@
       </div>
     </div>
   </div>
+  <script>
+    $(document).ready(function (){
+      fetch_data();
+      function fetch_data(){
+        var dataTable = $('#salesprod_table').DataTable({
+          "processing" : true,
+          "serverSide" : true,
+          "columnDefs": [{ "orderable": false, "targets":[0,1]}],
+          "order" : [],
+          "ajax" : {
+            url: "sales.php",
+            type:"POST"
+          }
+        });
+      }
+    }); 
+  </script>
 
   <!--   Core JS Files   -->
-  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-  <script src="assets/js/core/jquery.min.js"></script>
-  <script src="assets/js/core/popper.min.js"></script>
-  <script src="assets/js/core/bootstrap.min.js"></script>
-  <script src="assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
-  <!--  Google Maps Plugin    -->
-  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
+   <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Core plugin JavaScript-->
+  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Page level plugin JavaScript-->
+  <script src="vendor/chart.js/Chart.min.js"></script>
+  <script src="vendor/datatables/jquery.dataTables.js"></script>
+  <script src="vendor/datatables/dataTables.bootstrap4.js"></script>
+  <script src="js/demo/datatables-demo.js"></script>
+  <script src="js/demo/chart-area-demo.js"></script>
   <!-- Chart JS -->
   <script src="assets/js/plugins/chartjs.min.js"></script>
   <!--  Notifications Plugin    -->

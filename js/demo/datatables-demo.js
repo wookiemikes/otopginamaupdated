@@ -15,6 +15,12 @@ $(document).ready(function() {
 $(document).ready(function() {
   $('#product_table').DataTable();
 });
+$(document).ready(function() {
+  $('#prodsales_table').DataTable();
+});
+$(document).ready(function() {
+  $('#toprated_table').DataTable();
+});
 
 
 
