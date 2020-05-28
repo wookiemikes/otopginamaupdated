@@ -404,13 +404,15 @@ include 'dashboardlogout.php';
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
-        <div class="modal-body">
-          Generate Daily Total Sales?
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Generate</button>
-        </div>
+        <form action="salesreports.php" method="POST">
+          <div class="modal-body">
+            Generate Daily Total Sales?
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="submit" name="dailygen" class="btn btn-primary">Generate</button>
+          </div>
+        </form>
       </div>
     </div>
   </div>
@@ -423,22 +425,30 @@ include 'dashboardlogout.php';
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
-        <div class="modal-body">
-          Generate Weekly Sales?
-          <br>
-          <div class="col-md-12 row">
-            <div class="col-md-6">
-              
+        <form action="salesreports.php" method="POST">
+          <div class="modal-body">
+            Generate Weekly Sales?
+            <br>
+            <div class="col-md-12 row">
+              <div class="col-md-12"></div>
+              <div class="col-md-6 mb-3">
+                <label for="lastName">From<i>(date)</i>:</label>
+                <input type="date" class="form-control" id="lastName" placeholder="" value="" required>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="lastName">To<i>(date)</i>:</label>
+                <input type="date" class="form-control" id="lastName" placeholder="" value="" required>
+
+              </div>
             </div>
-            <div class="col-md-6"></div>
           </div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Generate</button>
-        </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="submit" name="weeklygen" class="btn btn-primary">Generate</button>
+        </form>
       </div>
     </div>
+  </div>
   </div>
   <div class="modal fade" id="monthlyModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
@@ -449,13 +459,27 @@ include 'dashboardlogout.php';
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
-        <div class="modal-body">
-          Generate Monthly Total Sales
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Generate</button>
-        </div>
+        <form action="salesreports.php" method="POST">
+          <div class="modal-body">
+            Generate Monthly Total Sales
+            <div class="col-md-12 row">
+              <div class="col-md-12"></div>
+              <div class="col-md-6 mb-3">
+                <label for="lastName">From<i>(date)</i>:</label>
+                <input type="date" class="form-control" id="lastName" placeholder="" value="" required>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="lastName">To<i>(date)</i>:</label>
+                <input type="date" class="form-control" id="lastName" placeholder="" value="" required>
+
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="submit" name="monthlygen" class="btn btn-primary">Generate</button>
+          </div>
+        </form>
       </div>
     </div>
   </div>
