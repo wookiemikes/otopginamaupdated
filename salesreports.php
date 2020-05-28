@@ -11,6 +11,7 @@ if (!isset($_SESSION['loggedIN'])) {
 include 'salesreports1.php';
 include 'dashboardlogout.php';
 
+
 ?>
 
 <!DOCTYPE html>
@@ -40,6 +41,43 @@ include 'dashboardlogout.php';
   </script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
+<script src="https://www.gstatic.com/charts/loader.js"></script>
+<script>
+  google.charts.load('current', {
+    packages: ['corechart', 'bar']
+  });
+  google.charts.setOnLoadCallback(drawBasic);
+
+  function drawBasic() {
+
+    var data = google.visualization.arrayToDataTable([
+      ['City', '2010 Population', ],
+      ['New York City, NY', 8175000],
+      ['Los Angeles, CA', 3792000],
+      ['Chicago, IL', 2695000],
+      ['Houston, TX', 2099000],
+      ['Philadelphia, PA', 1526000]
+    ]);
+
+    var options = {
+      title: 'Population of Largest U.S. Cities',
+      chartArea: {
+        width: '50%'
+      },
+      hAxis: {
+        title: 'Total Population',
+        minValue: 0
+      },
+      vAxis: {
+        title: 'City'
+      }
+    };
+
+    var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
+
+    chart.draw(data, options);
+  }
+</script>
 
 <body class="">
   <div class="wrapper ">
@@ -137,6 +175,31 @@ include 'dashboardlogout.php';
 </div> -->
       <div class="content">
         <div class="row">
+          <div class="col-md-12">
+            <div class="card ">
+              <div class="card-header col-md-12 col-sm-12 row ">
+                <div class="col-md-6 col-sm-6">
+                  <h5 class="card-title">Revenue Chart (Daily) <i class="nc-icon nc-sound-wave text-success" aria-hidden="true"></i></h5>
+                </div>
+                <div class="col-md-6 col-sm-6"><button class="btn btn-sm btn-success" style="float: right;">Generate Excel File</button></div>
+                <div class="col-md-6">
+                </div>
+              </div>
+              <div class="card-body ">
+
+                <div id="chart_div" style="width:1000px; height:400px"></div>
+
+
+
+              </div>
+              <div class="card-footer ">
+                <hr>
+                <div class="stats">
+                  <i class="fa fa-history"></i> <a href="salesreports.php">Refresh</a>
+                </div>
+              </div>
+            </div>
+          </div>
           <div class="col-lg-4 col-md-6 col-sm-6">
             <div class="card card-stats">
               <div class="card-body ">
@@ -217,52 +280,6 @@ include 'dashboardlogout.php';
           </div>
         </div>
         <div class="row">
-          <div class="col-md-12">
-            <div class="card ">
-              <div class="card-header col-md-12 col-sm-12 row ">
-                <div class="col-md-6 col-sm-6">
-                  <h5 class="card-title">Hot Items <i class="fa fa-fire text-danger" aria-hidden="true"></i></h5>
-                </div>
-                <div class="col-md-6 col-sm-6"><button class="btn btn-sm btn-success" style="float: right;">Generate Excel File</button></div>
-                <div class="col-md-6">
-                  <p class="card-category">Most Sold items</p>
-                </div>
-              </div>
-              <div class="card-body ">
-                <div class="table-responsive">
-                  <table class="table table-bordered" id="salesprod_table" width="100%" cellspacing="0">
-                    <thead>
-                      <tr>
-                        <th>sales id</th>
-                        <th>product name</th>
-                        <th>revenue</th>
-                        <th>date updated</th>
-                      </tr>
-                    </thead>
-                    <tfoot>
-                      <tr>
-                        <th>sales id</th>
-                        <th>product name</th>
-                        <th>revenue</th>
-                        <th>date updated</th>
-                      </tr>
-                    </tfoot>
-                    <tbody>
-                    </tbody>
-                  </table>
-                </div>
-
-              </div>
-              <div class="card-footer ">
-                <hr>
-                <div class="stats">
-                  <i class="fa fa-history"></i> <a href="salesreports.php">Refresh</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="row">
 
           <div class="col-md-6">
             <div class="card card-chart">
@@ -292,7 +309,7 @@ include 'dashboardlogout.php';
           <div class="col-md-6">
             <div class="card card-chart">
               <div class="card-header">
-                <h5 class="card-title">Lowest Rated Product <i class="fa fa-star text-warning"></i></h5>
+                <h5 class="card-title">Lowest Rated Product <i class="fa fa-star text-danger"></i></h5>
               </div>
               <div class="card-body">
                 <table class="table">
@@ -314,6 +331,7 @@ include 'dashboardlogout.php';
               </div>
             </div>
           </div>
+
         </div>
       </div>
       <footer class="footer footer-black  footer-white ">
