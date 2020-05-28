@@ -271,7 +271,28 @@ include 'dashboardlogout.php';
                 <p class="card-category">Line Chart with Points</p>
               </div>
               <div class="card-body">
-                <canvas id="speedChart" width="400" height="100"></canvas>
+                <div class="table-responsive">
+                  <table class="table table-bordered" id="salesprod_table" width="100%" cellspacing="0">
+                    <thead>
+                      <tr>
+                        <th>sales id</th>
+                        <th>product name</th>
+                        <th>revenue</th>
+                        <th>date updated</th>
+                      </tr>
+                    </thead>
+                    <tfoot>
+                      <tr>
+                        <th>sales id</th>
+                        <th>product name</th>
+                        <th>revenue</th>
+                        <th>date updated</th>
+                      </tr>
+                    </tfoot>
+                    <tbody>
+                    </tbody>
+                  </table>
+                </div>
               </div>
               <div class="card-footer">
                 <hr />
@@ -288,6 +309,7 @@ include 'dashboardlogout.php';
                 <p class="card-category">Today's Total Revenue</p>
               </div>
               <div class="card-body ">
+
               </div>
               <div class="card-footer ">
 
@@ -403,6 +425,13 @@ include 'dashboardlogout.php';
         </div>
         <div class="modal-body">
           Generate Weekly Sales?
+          <br>
+          <div class="col-md-12 row">
+            <div class="col-md-6">
+              
+            </div>
+            <div class="col-md-6"></div>
+          </div>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
