@@ -1,17 +1,17 @@
-<?php 
+<?php
 
-  session_start();
+session_start();
 
-  if (!isset($_SESSION['loggedIN'])) {
-    # code...
-    header('Location: dashboardlogin.php');
-    exit();
-  }
+if (!isset($_SESSION['loggedIN'])) {
+  # code...
+  header('Location: dashboardlogin.php');
+  exit();
+}
 
-  include 'dashboardreports.php';
-  include 'dashboardlogout.php';
+include 'dashboardreports.php';
+include 'dashboardlogout.php';
 
- ?>
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -35,9 +35,7 @@
   <link href="assets/demo/demo.css" rel="stylesheet" />
   <link href="vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
 
-  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
-  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-  crossorigin="anonymous"> 
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous">
   </script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
@@ -60,19 +58,19 @@
       </div>
       <div class="sidebar-wrapper">
         <ul class="nav">
-          <li >
+          <li>
             <a href="./dashboard.php">
               <i class="nc-icon nc-tv-2"></i>
               <p>Dashboard</p>
             </a>
           </li>
-          <li >
+          <li>
             <a href="./dashboardproducts.php">
               <i class="nc-icon nc-basket"></i>
               <p>Products</p>
             </a>
           </li>
-          <li >
+          <li>
             <a href="./dashboardstores.php">
               <i class="nc-icon nc-shop"></i>
               <p>Stores</p>
@@ -91,9 +89,9 @@
             </a>
           </li>
           <li>
-            <a href="./user.html">
-              <i class="nc-icon nc-single-02"></i>
-              <p>User Settings</p>
+            <a href="./salesreports.php">
+              <i class="nc-icon nc-chart-bar-32"></i>
+              <p>Sales Reports</p>
             </a>
           </li>
         </ul>
@@ -150,7 +148,7 @@
                   <div class="col-7 col-md-8">
                     <div class="numbers">
                       <p class="card-category">Sufficient or Enough</p>
-                      <p class="card-title"><?php echo"$total_sufficient"; ?>
+                      <p class="card-title"><?php echo "$total_sufficient"; ?>
                         <p>
                     </div>
                   </div>
@@ -176,7 +174,7 @@
                   <div class="col-7 col-md-8">
                     <div class="numbers">
                       <p class="card-category">Needs to be Replenished</p>
-                      <p class="card-title"><?php echo"$total_warning"; ?>
+                      <p class="card-title"><?php echo "$total_warning"; ?>
                         <p>
                     </div>
                   </div>
@@ -202,7 +200,7 @@
                   <div class="col-7 col-md-8">
                     <div class="numbers">
                       <p class="card-category">Critical or Empty</p>
-                      <p class="card-title"><?php echo"$total_critical"; ?>
+                      <p class="card-title"><?php echo "$total_critical"; ?>
                         <p>
                     </div>
                   </div>
@@ -306,27 +304,27 @@
   </div>
 
   <!--Logout Modal -->
-    <div class="modal fade" id="logoutmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalCenterTitle">Logout</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            Are you sure?
-          </div>
-          <form method="post" action="dashboard.php">
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">No, Nevermind</button>
-              <button type="submit" name="logout" class="btn btn-primary">Yes, Let me go</button>
-            </div>
-          </form>
+  <div class="modal fade" id="logoutmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalCenterTitle">Logout</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
         </div>
+        <div class="modal-body">
+          Are you sure?
+        </div>
+        <form method="post" action="dashboard.php">
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">No, Nevermind</button>
+            <button type="submit" name="logout" class="btn btn-primary">Yes, Let me go</button>
+          </div>
+        </form>
       </div>
     </div>
+  </div>
   <!--Add Products Modal -->
   <div class="modal fade bd-example-modal-lg" id="addproduct" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
@@ -344,14 +342,14 @@
                 <div class="form-group">
                   <label for="message-text" class="col-form-label"><b>Product Name:</b></label>
                   <select class="form-control" id="product_name" name="product_name">
-                    <option value="Select"  selected="selected">Select Company Name</option>
+                    <option value="Select" selected="selected">Select Company Name</option>
                     <?php
-                      $sqlcompany = "SELECT name FROM product LIMIT 5";
-                      $resultset = mysqli_query($connect, $sqlcompany) or die("database error:". mysqli_error($connect));
-                      while( $rows = mysqli_fetch_assoc($resultset) ) {
-                      ?>
+                    $sqlcompany = "SELECT name FROM product LIMIT 5";
+                    $resultset = mysqli_query($connect, $sqlcompany) or die("database error:" . mysqli_error($connect));
+                    while ($rows = mysqli_fetch_assoc($resultset)) {
+                    ?>
                       <option value="<?php echo $rows["name"]; ?>"><?php echo $rows["name"]; ?></option>
-                      <?php } ?>
+                    <?php } ?>
                   </select>
                 </div>
               </div>
@@ -372,26 +370,30 @@
     </div>
   </div>
   <script>
-    $(document).ready(function (){
+    $(document).ready(function() {
       fetch_data();
-      function fetch_data(){
+
+      function fetch_data() {
         var dataTable = $('#inventory_table').DataTable({
-          "processing" : true,
-          "serverSide" : true,
-          "columnDefs": [{ "orderable": false, "targets":[0,1]}],
-          "order" : [],
-          "ajax" : {
+          "processing": true,
+          "serverSide": true,
+          "columnDefs": [{
+            "orderable": false,
+            "targets": [0, 1]
+          }],
+          "order": [],
+          "ajax": {
             url: "dashboardinventory_fetch.php",
-            type:"POST"
+            type: "POST"
           }
         });
       }
 
-      $("#add").on('click',function(){
+      $("#add").on('click', function() {
         var product_name = $("#product_name").val();
         var QTY = $("#QTY").val();
 
-        
+
         if (product_name == "" || QTY == "")
           alert('Wrong Input, Please check your username or password');
         else {
@@ -400,20 +402,20 @@
             method: 'POST',
             data: {
               add: 1,
-              product_name:product_name,
-              QTY:QTY
+              product_name: product_name,
+              QTY: QTY
             },
-            success: function (response) {
+            success: function(response) {
               $("#response").html(response);
 
               if (response.indexOf('success') >= 0)
-              alert("Data Inserted");
+                alert("Data Inserted");
             },
             datatype: 'text'
           });
         }
       });
-    }); 
+    });
   </script>
   <!--   Core JS Files   -->
   <script src="vendor/jquery/jquery.min.js"></script>

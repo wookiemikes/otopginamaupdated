@@ -1,17 +1,17 @@
-<?php 
+<?php
 
-  session_start();
+session_start();
 
-  if (!isset($_SESSION['loggedIN'])) {
-    # code...
-    header('Location: dashboardlogin.php');
-    exit();
-  }
+if (!isset($_SESSION['loggedIN'])) {
+  # code...
+  header('Location: dashboardlogin.php');
+  exit();
+}
 
-  include 'dashboardreports.php';
-  include 'dashboardlogout.php';
+include 'dashboardreports.php';
+include 'dashboardlogout.php';
 
- ?>
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -55,19 +55,19 @@
       </div>
       <div class="sidebar-wrapper">
         <ul class="nav">
-          <li >
+          <li>
             <a href="./dashboard.php">
               <i class="nc-icon nc-tv-2"></i>
               <p>Dashboard</p>
             </a>
           </li>
-          <li >
+          <li>
             <a href="./dashboardproducts.php">
               <i class="nc-icon nc-basket"></i>
               <p>Products</p>
             </a>
           </li>
-          <li >
+          <li>
             <a href="./dashboardstores.php">
               <i class="nc-icon nc-shop"></i>
               <p>Stores</p>
@@ -86,9 +86,9 @@
             </a>
           </li>
           <li>
-            <a href="./user.html">
-              <i class="nc-icon nc-single-02"></i>
-              <p>User Settings</p>
+            <a href="./salesreports.php">
+              <i class="nc-icon nc-chart-bar-32"></i>
+              <p>Sales Reports</p>
             </a>
           </li>
         </ul>
@@ -145,7 +145,7 @@
                   <div class="col-7 col-md-8">
                     <div class="numbers">
                       <p class="card-category">Total Orders Pending</p>
-                      <p class="card-title"><?php echo"$total_pending";?>
+                      <p class="card-title"><?php echo "$total_pending"; ?>
                         <p>
                     </div>
                   </div>
@@ -171,7 +171,7 @@
                   <div class="col-7 col-md-8">
                     <div class="numbers">
                       <p class="card-category">Total Orders Delivered</p>
-                      <p class="card-title"><?php echo"$total_delivered";?>
+                      <p class="card-title"><?php echo "$total_delivered"; ?>
                         <p>
                     </div>
                   </div>
@@ -201,7 +201,7 @@
                 <p class="card-category"></p>
               </div>
               <div class="card-body ">
-              <div class="table-responsive">
+                <div class="table-responsive">
                   <table class="table table-bordered datatables" id="order_table" width="100%" cellspacing="0">
                     <thead class="text-primary">
                       <tr>
@@ -246,7 +246,7 @@
                 <p class="card-category"></p>
               </div>
               <div class="card-body ">
-                
+
               </div>
               <div class="card-footer ">
                 <hr>
@@ -289,27 +289,27 @@
   </div>
 
   <!--Logout Modal -->
-    <div class="modal fade" id="logoutmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalCenterTitle">Logout</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            Are you sure?
-          </div>
-          <form method="post" action="dashboard.php">
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">No, Nevermind</button>
-              <button type="submit" name="logout" class="btn btn-primary">Yes, Let me go</button>
-            </div>
-          </form>
+  <div class="modal fade" id="logoutmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalCenterTitle">Logout</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
         </div>
+        <div class="modal-body">
+          Are you sure?
+        </div>
+        <form method="post" action="dashboard.php">
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">No, Nevermind</button>
+            <button type="submit" name="logout" class="btn btn-primary">Yes, Let me go</button>
+          </div>
+        </form>
       </div>
     </div>
+  </div>
   <!--Add Products Modal -->
   <div class="modal fade bd-example-modal-lg" id="addmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
@@ -356,24 +356,28 @@
     </div>
   </div>
   <script>
-  $(document).ready(function(){
+    $(document).ready(function() {
       fetch_data();
-      function fetch_data(){
+
+      function fetch_data() {
         var dataTable = $('#order_table').DataTable({
-          "processing" : true,
-          "serverSide" : true,
-          "columnDefs": [{ "orderable": false, "targets":[0,1]}],
-          "order" : [],
-          "ajax" : {
+          "processing": true,
+          "serverSide": true,
+          "columnDefs": [{
+            "orderable": false,
+            "targets": [0, 1]
+          }],
+          "order": [],
+          "ajax": {
             url: "dashboardorder_fetch.php",
-            type:"POST"
+            type: "POST"
           }
         });
       }
     });
   </script>
- <!--   Core JS Files   -->
- <script src="vendor/jquery/jquery.min.js"></script>
+  <!--   Core JS Files   -->
+  <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
   <!-- Core plugin JavaScript-->
@@ -385,7 +389,7 @@
   <script src="vendor/datatables/dataTables.bootstrap4.js"></script>
   <script src="js/demo/datatables-demo.js"></script>
   <script src="js/demo/chart-area-demo.js"></script>
-  
+
   <!--  Google Maps Plugin    -->
   <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
   <!-- Chart JS -->

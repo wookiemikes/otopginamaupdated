@@ -1,18 +1,18 @@
-<?php 
+<?php
 
-  session_start();
+session_start();
 
-  if (!isset($_SESSION['loggedIN'])) {
-    # code...
-    header('Location: dashboardlogin.php');
-    exit();
-  }
+if (!isset($_SESSION['loggedIN'])) {
+  # code...
+  header('Location: dashboardlogin.php');
+  exit();
+}
 
-  include 'dashboardreports.php';
-  include 'dashboardlogout.php';
-  include 'dashboardproducts1.php';
+include 'dashboardreports.php';
+include 'dashboardlogout.php';
+include 'dashboardproducts1.php';
 
- ?>
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -39,11 +39,9 @@
 
 
 
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
-  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-  crossorigin="anonymous"> 
-    </script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous">
+  </script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 
 <body class="">
@@ -64,7 +62,7 @@
       </div>
       <div class="sidebar-wrapper">
         <ul class="nav">
-          <li >
+          <li>
             <a href="./dashboard.php">
               <i class="nc-icon nc-tv-2"></i>
               <p>Dashboard</p>
@@ -84,8 +82,8 @@
           </li>
           <li>
             <a href="./dashboardorders.php">
-               <i class="nc-icon nc-box-2"></i>
-               <p>Orders</p>
+              <i class="nc-icon nc-box-2"></i>
+              <p>Orders</p>
             </a>
           </li>
           <li>
@@ -95,9 +93,9 @@
             </a>
           </li>
           <li>
-            <a href="./user.html">
-              <i class="nc-icon nc-single-02"></i>
-              <p>User Settings</p>
+            <a href="./salesreports.php">
+              <i class="nc-icon nc-chart-bar-32"></i>
+              <p>Sales Reports</p>
             </a>
           </li>
         </ul>
@@ -284,27 +282,27 @@
   </div>
 
   <!--Logout Modal -->
-    <div class="modal fade" id="logoutmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalCenterTitle">Logout</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            Are you sure?
-          </div>
-          <form method="post" action="dashboard.php">
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">No, Nevermind</button>
-              <button type="submit" name="logout" class="btn btn-primary">Yes, Let me go</button>
-            </div>
-          </form>
+  <div class="modal fade" id="logoutmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalCenterTitle">Logout</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
         </div>
+        <div class="modal-body">
+          Are you sure?
+        </div>
+        <form method="post" action="dashboard.php">
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">No, Nevermind</button>
+            <button type="submit" name="logout" class="btn btn-primary">Yes, Let me go</button>
+          </div>
+        </form>
       </div>
     </div>
+  </div>
   <!--Add Products Modal -->
   <div class="modal fade bd-example-modal-lg" id="addmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
@@ -315,7 +313,7 @@
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
-          <form enctype="multipart/form-data" action="dashboardproducts.php" method="post" >
+        <form enctype="multipart/form-data" action="dashboardproducts.php" method="post">
           <div class="modal-body">
             <div class="container-fluid row">
               <div class="col-lg-12">
@@ -334,14 +332,14 @@
                 <div class="form-group">
                   <label for="message-text" class="col-form-label"><b>Company:</b></label>
                   <select class="form-control" id="company_name" name="company_name">
-                    <option value=""  selected="selected">Select Company Name</option>
+                    <option value="" selected="selected">Select Company Name</option>
                     <?php
-                      $sqlcompany = "SELECT company_name FROM company LIMIT 5";
-                      $resultset = mysqli_query($connect, $sqlcompany) or die("database error:". mysqli_error($connect));
-                      while( $rows = mysqli_fetch_assoc($resultset) ) {
-                      ?>
+                    $sqlcompany = "SELECT company_name FROM company LIMIT 5";
+                    $resultset = mysqli_query($connect, $sqlcompany) or die("database error:" . mysqli_error($connect));
+                    while ($rows = mysqli_fetch_assoc($resultset)) {
+                    ?>
                       <option value="<?php echo $rows["company_name"]; ?>"><?php echo $rows["company_name"]; ?></option>
-                      <?php } ?>
+                    <?php } ?>
                   </select>
                 </div>
               </div>
@@ -439,15 +437,17 @@
                 <div class="form-group form-check-inline">
                   <input class="form-check-input" type="checkbox" name="tags[]" id="tags" value="others">
                   <label class="form-check-label" for="others">#others</label>
-                </div>       
+                </div>
               </div>
               <div class="col-lg-12 col-md-6">
-                    <label for="message-text" class="col-form-label"><b>Product Snippets (Upload 4 Images)</b> <p class="text-danger"><i>*required</i></p></label>
-                    <br>
-                    <input type="file" name="img_code1" id="img_code1">
-                    <input type="file" name="img_code2" id="img_code2">
-                    <input type="file" name="img_code3" id="img_code3">
-                    <input type="file" name="img_code4" id="img_code4">
+                <label for="message-text" class="col-form-label"><b>Product Snippets (Upload 4 Images)</b>
+                  <p class="text-danger"><i>*required</i></p>
+                </label>
+                <br>
+                <input type="file" name="img_code1" id="img_code1">
+                <input type="file" name="img_code2" id="img_code2">
+                <input type="file" name="img_code3" id="img_code3">
+                <input type="file" name="img_code4" id="img_code4">
               </div>
             </div>
           </div>
@@ -455,29 +455,31 @@
             <button type="button" class="btn btn-secondary" data-dismiss="modal">No, Nevermind</button>
             <button type="submit" name="submit" class="btn btn-primary">Yes, Continue</button>
           </div>
-        </form> 
+        </form>
       </div>
     </div>
   </div>
 
   <script type="text/javascript">
-    $(document).ready(function(){
+    $(document).ready(function() {
       fetch_data();
-      function fetch_data(){
+
+      function fetch_data() {
         var dataTable = $('#product_table').DataTable({
-          "processing" : true,
-          "serverSide" : true,
-          "columnDefs": [{ "orderable": false, "targets":[0,1]}],
-          "order" : [],
-          "ajax" : {
+          "processing": true,
+          "serverSide": true,
+          "columnDefs": [{
+            "orderable": false,
+            "targets": [0, 1]
+          }],
+          "order": [],
+          "ajax": {
             url: "dashboardproducts_fetch.php",
-            type:"POST"
+            type: "POST"
           }
         });
       }
     });
-      
-    
   </script>
 
 
