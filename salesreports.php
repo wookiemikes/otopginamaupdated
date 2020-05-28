@@ -272,20 +272,20 @@ include 'dashboardlogout.php';
               </div>
               <div class="card-body">
                 <div class="table-responsive">
-                  <table class="table table-bordered" id="salesprod_table" width="100%" cellspacing="0">
+                  <table class="table table-bordered" id="rates_table" width="100%" cellspacing="0">
                     <thead>
                       <tr>
-                        <th>sales id</th>
+                        <th>#</th>
                         <th>product name</th>
-                        <th>revenue</th>
+                        <th>Rate</th>
                         <th>date updated</th>
                       </tr>
                     </thead>
                     <tfoot>
                       <tr>
-                        <th>sales id</th>
+                        <th>#</th>
                         <th>product name</th>
-                        <th>revenue</th>
+                        <th>Rate</th>
                         <th>date updated</th>
                       </tr>
                     </tfoot>
@@ -298,24 +298,6 @@ include 'dashboardlogout.php';
                 <hr />
                 <div class="card-stats">
                   <i class="fa fa-history"></i> Refresh
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="card ">
-              <div class="card-header ">
-                <h5 class="card-title">Sales</h5>
-                <p class="card-category">Today's Total Revenue</p>
-              </div>
-              <div class="card-body ">
-
-              </div>
-              <div class="card-footer ">
-
-                <hr>
-                <div class="stats">
-                  <a href="#" data-toggle="modal" data-target="#generateModal"><i class="fa fa-history"></i> Refresh</a>
                 </div>
               </div>
             </div>
@@ -433,11 +415,11 @@ include 'dashboardlogout.php';
               <div class="col-md-12"></div>
               <div class="col-md-6 mb-3">
                 <label for="lastName">From<i>(date)</i>:</label>
-                <input type="date" class="form-control" id="lastName" placeholder="" value="" required>
+                <input type="date" class="form-control" name="dateweek1" id="lastName" placeholder="" value="" required>
               </div>
               <div class="col-md-6 mb-3">
                 <label for="lastName">To<i>(date)</i>:</label>
-                <input type="date" class="form-control" id="lastName" placeholder="" value="" required>
+                <input type="date" class="form-control" name="dateweek2" id="lastName" placeholder="" value="" required>
 
               </div>
             </div>
@@ -466,11 +448,11 @@ include 'dashboardlogout.php';
               <div class="col-md-12"></div>
               <div class="col-md-6 mb-3">
                 <label for="lastName">From<i>(date)</i>:</label>
-                <input type="date" class="form-control" id="lastName" placeholder="" value="" required>
+                <input type="date" class="form-control" name="datemonth1" id="lastName" placeholder="" value="" required>
               </div>
               <div class="col-md-6 mb-3">
                 <label for="lastName">To<i>(date)</i>:</label>
-                <input type="date" class="form-control" id="lastName" placeholder="" value="" required>
+                <input type="date" class="form-control" name="datemonth2" id="lastName" placeholder="" value="" required>
 
               </div>
             </div>
@@ -486,6 +468,7 @@ include 'dashboardlogout.php';
   <script>
     $(document).ready(function() {
       fetch_data();
+      fetch_data2();
 
       function fetch_data() {
         var dataTable = $('#salesprod_table').DataTable({
