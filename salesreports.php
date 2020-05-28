@@ -264,35 +264,47 @@ include 'dashboardlogout.php';
         </div>
         <div class="row">
 
-          <div class="col-md-12">
+          <div class="col-md-6">
             <div class="card card-chart">
               <div class="card-header">
-                <h5 class="card-title">Top Rated Products <i class="fa fa-star text-warning"></i></h5>
-                <p class="card-category">Line Chart with Points</p>
+                <h5 class="card-title">Highest Rated Product <i class="fa fa-star text-warning"></i></h5>
               </div>
               <div class="card-body">
-                <div class="table-responsive">
-                  <table class="table table-bordered" id="rates_table" width="100%" cellspacing="0">
-                    <thead>
-                      <tr>
-                        <th>#</th>
-                        <th>product name</th>
-                        <th>Rate</th>
-                        <th>date updated</th>
-                      </tr>
-                    </thead>
-                    <tfoot>
-                      <tr>
-                        <th>#</th>
-                        <th>product name</th>
-                        <th>Rate</th>
-                        <th>date updated</th>
-                      </tr>
-                    </tfoot>
-                    <tbody>
-                    </tbody>
-                  </table>
+                <table class="table">
+                  <tr>
+                    <td>PRODUCT NAME</td>
+                    <td>RATING</td>
+                  </tr>
+                  <tr>
+                    <td> <?php echo $productname; ?></td>
+                    <td><?php echo $rating; ?></td>
+                  </tr>
+                </table>
+              </div>
+              <div class="card-footer">
+                <hr />
+                <div class="card-stats">
+                  <i class="fa fa-history"></i> Refresh
                 </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card card-chart">
+              <div class="card-header">
+                <h5 class="card-title">Lowest Rated Product <i class="fa fa-star text-warning"></i></h5>
+              </div>
+              <div class="card-body">
+                <table class="table">
+                  <tr>
+                    <td>PRODUCT NAME</td>
+                    <td>RATING</td>
+                  </tr>
+                  <tr>
+                    <td> <?php echo $productnamelow; ?></td>
+                    <td><?php echo $ratinglow; ?></td>
+                  </tr>
+                </table>
               </div>
               <div class="card-footer">
                 <hr />
@@ -468,7 +480,6 @@ include 'dashboardlogout.php';
   <script>
     $(document).ready(function() {
       fetch_data();
-      fetch_data2();
 
       function fetch_data() {
         var dataTable = $('#salesprod_table').DataTable({
