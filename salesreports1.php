@@ -36,9 +36,12 @@
 	$rated_query = "select avg(rating), product_name from product_rate group by product_name order by avg(rating) asc limit 1";
 	$rated_results = mysqli_query($connect, $rated_query);
 	while ($list = mysqli_fetch_assoc($rated_results)) {
-		$ratinglow = $list['avg(rating)'];
+		$ratinglow1 = $list['avg(rating)'];
 		$productnamelow = $list['product_name'];
 	}
+
+	$hot_query = "select SUM(revenue), product_name from product_sales group by product_name order by SUM(revenue) desc limit 1";
+	$hot
 
 
 

@@ -787,22 +787,12 @@ ol {
 -----------------------*/
 
 .hero-items .single-hero-items {
-	height: 725px;
+	height: 500px;
+	margin-left: 100px;
+	margin-right: 100px;
 	padding-top: 210px;
 }
 
-.hero-items .single-hero-items span {
-	color: #e7ab3c;
-	font-size: 12px;
-	font-weight: 700;
-	letter-spacing: 2px;
-	text-transform: uppercase;
-	line-height: 28px;
-	display: inline-block;
-	position: relative;
-	top: 50px;
-	opacity: 0;
-}
 
 .hero-items .single-hero-items h1 {
 	color: #252525;
@@ -827,35 +817,6 @@ ol {
 	opacity: 0;
 }
 
-.hero-items .off-card {
-	height: 154px;
-	width: 154px;
-	padding-top: 40px;
-	border-radius: 50%;
-	text-align: center;
-	line-height: 140px;
-	position: absolute;
-	left: 47%;
-	top: 160px;
-	background: #e7ab3c;
-	z-index: 1;
-	-webkit-transform: rotate(45deg);
-	-ms-transform: rotate(45deg);
-	transform: rotate(45deg);
-	opacity: 0;
-}
-
-.hero-items .off-card:after {
-	position: absolute;
-	left: 5px;
-	top: 5px;
-	width: calc(100% - 10px);
-	height: calc(100% - 10px);
-	border: 2px dashed #ffffff;
-	content: "";
-	border-radius: 50%;
-	z-index: -1;
-}
 
 .hero-items .off-card h2 {
 	font-size: 32px;
@@ -878,7 +839,7 @@ ol {
 .hero-items .owl-item.active .single-hero-items p,
 .hero-items .owl-item.active .single-hero-items .primary-btn {
 	top: 0;
-	opacity: 1;
+	opacity: 0;
 }
 
 .hero-items .owl-item.active .single-hero-items span {
@@ -1422,6 +1383,8 @@ ol {
 
 .benefit-items .single-benefit .sb-icon {
 	float: left;
+	font-size: 33px;
+	color: #e7ab3c;
 	margin-right: 20px;
 }
 

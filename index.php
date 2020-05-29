@@ -191,40 +191,112 @@ include 'logout.php';
   <!-- Hero Section Begin -->
   <section class="hero-section">
     <div class="hero-items owl-carousel">
-      <div class="single-hero-items set-bg" data-setbg="img/ginamabanner.jpg">
+      <div class="single-hero-items set-bg" data-setbg="img/hero-1.jpg">
         <div class="container">
           <div class="row">
-            <div class="col-lg-5">
+            <!--div class="col-lg-5">
               <span>Bag,kids</span>
               <h1>Black friday</h1>
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
                 incididunt ut labore et dolore</p>
               <a href="#" class="primary-btn">Shop Now</a>
-            </div>
-          </div>s
+            </!--div-->
+          </div>
           <div class="off-card">
-            <h2>Sale <span>50%</span></h2>
+            <!--h2></!--h2-->
           </div>
         </div>
       </div>
       <div class="single-hero-items set-bg" data-setbg="img/hero-2.jpg">
         <div class="container">
           <div class="row">
-            <div class="col-lg-5">
+            <!--div class="col-lg-5">
               <span>Bag,kids</span>
               <h1>Black friday</h1>
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
                 incididunt ut labore et dolore</p>
               <a href="#" class="primary-btn">Shop Now</a>
-            </div>
+            </!--div-->
           </div>
           <div class="off-card">
-            <h2>Sale <span>50%</span></h2>
+            <!--h2></!--h2-->
           </div>
         </div>
       </div>
     </div>
   </section>
+
+  <section class="latest-blog spad">
+    <div class="container">
+      <div class="benefit-items">
+        <div class="row">
+          <div class="col-lg-4">
+            <div class="single-benefit">
+              <div class="sb-icon">
+                <i class="ti-heart"></i>
+              </div>
+              <div class="sb-text">
+                <h6>Find things you love</h6>
+                <p>made with love</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="single-benefit">
+              <div class="sb-icon">
+                <i class="ti-truck"></i>
+              </div>
+              <div class="sb-text">
+                <h6>Free Shipping</h6>
+                <p>For items below ₱100</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="single-benefit">
+              <div class="sb-icon">
+                <i class="ti-hand-open"></i>
+              </div>
+              <div class="sb-text">
+                <h6>Experience Local</h6>
+                <p>Our products are 100% local</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div class="banner-section spad">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-4">
+          <div class="single-banner">
+            <img src="img/snacksbanner1.jpg" alt="">
+            <div class="inner-text">
+              <h4>FOOD</h4>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="single-banner">
+            <img src="img/productsbanner.jpg" alt="">
+            <div class="inner-text">
+              <h4>HANDICRAFTS</h4>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="single-banner">
+            <img src="img/othersbanner.jpg" alt="">
+            <div class="inner-text">
+              <h4>ESSENTIALS</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- Banner Section Begin -->
   <section id="team" class="team section-bg">
@@ -253,8 +325,7 @@ include 'logout.php';
       </div>
       <div class="product-list">
 
-        <div id="display_item">
-        </div>
+        <div id="display_item"></div>
         <div class="loading-more">
           <i class="icon_loading"></i>
           <a href="#">
