@@ -324,17 +324,26 @@ include 'logout.php';
         </div>
       </div>
       <div class="product-list">
+        <div class="col-lg-12">
+          <div class="row" id="display_item">
 
-        <div id="display_item"></div>
+          </div>
+         </div> 
+
+
+
+
+
         <div class="loading-more">
           <i class="icon_loading"></i>
           <a href="#">
             Loading More
           </a>
+
         </div>
 
 
-      </div>
+      </>
   </section>
   <!-- Banner Section End -->
 
@@ -512,8 +521,14 @@ include 'logout.php';
         $.ajax({
           url: "fetch_item.php",
           method: "POST",
+          error: function(data) {
+            console.log(data);
+          },
           success: function(data) {
-            $('#display_item').html(data);
+            console.log(data);
+            //$(div).find('#display_item').html(data);
+            $("#display_item").empty().append(data);
+            //$('#display_item').html(data);
           }
         });
       }
@@ -522,7 +537,6 @@ include 'logout.php';
         $.ajax({
           url: "fetch_cart.php",
           method: "POST",
-          dataType: "json",
           success: function(data) {
             $('#cart_details').html(data.cart_details);
             $('.total_price').text(data.total_price);

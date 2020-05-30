@@ -97,7 +97,7 @@ include 'dashboardlogout.php';
       </div>
       <div class="sidebar-wrapper">
         <ul class="nav">
-          <li class="active ">
+          <li>
             <a href="./dashboard.php">
               <i class="nc-icon nc-tv-2"></i>
               <p>Dashboard</p>
@@ -127,7 +127,7 @@ include 'dashboardlogout.php';
               <p>Inventory</p>
             </a>
           </li>
-          <li>
+          <li class="active ">
             <a href="./salesreports.php">
               <i class="nc-icon nc-chart-bar-32"></i>
               <p>Sales Reports</p>

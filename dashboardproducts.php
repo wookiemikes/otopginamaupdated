@@ -334,7 +334,7 @@ include 'dashboardproducts1.php';
                   <select class="form-control" id="company_name" name="company_name">
                     <option value="" selected="selected">Select Company Name</option>
                     <?php
-                    $sqlcompany = "SELECT company_name FROM company LIMIT 5";
+                    $sqlcompany = "SELECT company_name FROM company";
                     $resultset = mysqli_query($connect, $sqlcompany) or die("database error:" . mysqli_error($connect));
                     while ($rows = mysqli_fetch_assoc($resultset)) {
                     ?>
@@ -440,15 +440,11 @@ include 'dashboardproducts1.php';
                 </div>
               </div>
               <div class="col-lg-12 col-md-6">
-                <label for="message-text" class="col-form-label"><b>Product Snippets (Upload 4 Images)</b>
+                <label for="message-text" class="col-form-label"><b>Product Snippets (Upload 1 Image Only)</b>
                   <p class="text-danger"><i>*required</i></p>
                 </label>
                 <br>
                 <input type="file" name="img_code1" id="img_code1">
-                <input type="file" name="img_code2" id="img_code2">
-                <input type="file" name="img_code3" id="img_code3">
-                <input type="file" name="img_code4" id="img_code4">
-              </div>
             </div>
           </div>
           <div class="modal-footer">
