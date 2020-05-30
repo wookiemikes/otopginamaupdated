@@ -154,7 +154,7 @@ include "register_cont1.php";
                     <div class="register-form">
                         <h2>Register Account</h2>
                         <form action="register_cont.php" method="POST">
-                            <input type="hidden" name="userid_unique" value = "<?php echo $_SESSION['username']; ?>">
+                            <input type="hidden" name="username" value = "<?php echo $_SESSION['username']; ?>">
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="group-input">

@@ -1,3 +1,11 @@
+<?php
+
+
+  
+include "login1.php";
+include 'logout.php';
+include 'userdash1.php';
+?>
 <!DOCTYPE html>
 <html lang="zxx">
 
@@ -78,8 +86,15 @@
                     </div>
                 </div>
                 <div class="ht-right">
-                    <a href="register.php" class="login-panel" style="float: center;"><i class="fa fa-user"></i>Register</a>
-                    <a href="" class="login-panel" style="margin-right: 30px; float: center;" data-toggle="modal" data-target="#loginModal"><i class="fa fa-user"></i>Login</a>
+                    <?php
+                    if (isset($_SESSION['loggedIN'])) {
+                        $loggedIN = $_SESSION['username'];
+                        print("<a href='#' class='login-panel' style='margin-right: 30px; float: center;' data-toggle='modal' data-target='#logoutModal'><i class='fa fa-user'></i>Welcome Back, $loggedIN</a>");
+                        # code...
+                    } else {
+                        exit(header('Location: index.php'));
+                    }
+                    ?>
                     <div class="top-social">
                         <a href="https://www.facebook.com/otopginama"><i class="ti-facebook"></i></a>
                         <a href="https://www.dti.gov.ph/otop"><i class="fa fa-globe"></i></a>
@@ -189,29 +204,28 @@
                                 <table class="table" style="border: solid white;">
                                     <tr style="border: solid white;">
                                         <td width="25%" align="right"><b>Username: </b></td>
-                                        <td width="70%"></td>
+                                        <td width="70%"><?php echo $username;?></td>
+                                    </tr>
+                                    <tr style="border: solid white;">
+                                        <td width="25%" align="right"><b>Full Name: </b></td>
+                                        <td width="70%"><?php echo $fname;?> <?php echo $lname;?></td>
                                     </tr>
 
                                     <tr style="border: solid white;">
                                         <td width="25%" align="right"><b>Email Address: </b></td>
-                                        <td width="70%">asdasd</td>
+                                        <td width="70%"><?php echo $email;?></td>
                                     </tr>
 
 
                                     <tr style="border: solid white;">
                                         <td width="25%" align="right"><b>Phone Number: </b></td>
-                                        <td width="70%">asdasd</td>
+                                        <td width="70%"><?php echo $contact_no;?></td>
                                     </tr>
 
 
                                     <tr style="border: solid white;">
                                         <td width="25%" align="right"><b>Home Address: </b></td>
-                                        <td width="70%">asdasd</td>
-                                    </tr>
-
-                                    <tr style="border: solid white;">
-                                        <td width="25%" align="right"><b>Date of Birth: </b></td>
-                                        <td width="70%">asdasd</td>
+                                        <td width="70%"><?php echo $address;?></td>
                                     </tr>
                                     <tr>
                                         <td colspan="2" align="center"><button class="btn btn-sm btn-primary">Edit Profile</button> </td>
@@ -344,6 +358,27 @@
                     <div class="modal-footer mt-2" style="border-top: 0 none;">
                         <button type="button" class="btn btn-light pl-5 pr-5 text-secondary" style="border-radius: 0px;" data-dismiss="modal">CANCEL</button>
                         <button type="submit" class="btn text-white pl-5 pr-5" style="border-radius: 0px; background-color: #db9a37;">LOGIN</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalCenterTitle">Logout</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Are you sure?
+                </div>
+                <form method="post" action="index.php">
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">No, Nevermind</button>
+                        <button type="submit" name="logout" class="btn btn-primary">Yes, Let me go</button>
                     </div>
                 </form>
             </div>
