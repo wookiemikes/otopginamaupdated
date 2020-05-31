@@ -2,7 +2,7 @@
 session_start();
 $connect = mysqli_connect("localhost", "root", "", "otopginama");
 
-$columns = array('order_id', 'order_to', 'total_price', 'date_ordered');
+$columns = array('order_id', 'order_to', 'products','shipping_address','total_price', 'date_ordered');
 
 $query = "SELECT * FROM orders WHERE order_id = '1' ";
 
@@ -39,6 +39,11 @@ while($row = mysqli_fetch_array($result)){
   $sub_array[] = $row["order_to"];
   $sub_array[] = $row["total_price"];
   $sub_array[] = $row["date_ordered"];
+  $sub_array[] = "	<form action='dashboardorder_update1.php' method='POST'>
+					  <input type='hidden' name='order_ida' value='".$row["order_id"]."'>
+					  <input type='submit' class ='btn btn-sm btn-info' name ='submit' id = 'submit' value ='Update'>
+					</form>  
+					  ";
   $data[] = $sub_array;
 }
 function get_all_data($connect){

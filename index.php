@@ -1,6 +1,7 @@
 <?php
 include "login1.php";
 include 'logout.php';
+include 'productview1.php';
 ?>
 <!DOCTYPE html>
 <html lang="zxx">

@@ -1163,6 +1163,18 @@ ol {
 	padding: 16px 18px 12px 19px;
 }
 
+.product-item .pi-pic ul li input {
+	font-size: 16px;
+	font-weight: 700;
+	color: #252525;
+	display: block;
+	padding: 16px 18px 12px 19px;
+	background-color: #e7ab3c;
+	border: 0;
+	box-shadow: none;
+	border-radius: 0px;
+}
+
 .product-item .pi-text {
 	text-align: center;
 	padding-top: 26px;

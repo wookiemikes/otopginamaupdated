@@ -8,14 +8,12 @@ $query = "SELECT product.product_id, product.name, product.price,product_img.nam
 
 $statement = $connect->prepare($query);
 
-if($statement->execute())
-{
-  $result = $statement->fetchAll();
-	$output = '';
-	foreach($result as $row)
-	{
-    $output .= '
-            <div class="col-md-3 col-sm-6">
+if ($statement->execute()) {
+    $result = $statement->fetchAll();
+    $output = '';
+    foreach ($result as $row) {
+        $output .= '
+            <div class="col-md-4 col-sm-6">
               <div class="product-item">
                 <div class="pi-pic">
                   <img src="uploads/' . $row["img_code"] . '" alt="">
@@ -23,12 +21,9 @@ if($statement->execute())
                     <i class="icon_heart_alt"></i>
                   </div>
                   <ul>
-                    <form action="index.php" method="post">
-                      <li class="w-icon active"><a href="#"><i class="icon_bag_alt"></i></a></li>
-                    
-                      <input type="hidden" name="product_id" value="' . $row["product_id"] . '">
-                      <li class="quick-view"><input type="submit" name="view" value="+ Quick View"></li>
-                    </form>
+                    <li class="w-icon active"><a href="#"><i class="icon_bag_alt"></i></a></li>
+                    <li class="quick-view"><a href="#">+ Quick View</a></li>
+                    <li class="w-icon"><a href="#"><i class="fa fa-random"></i></a></li>
                   </ul>
                 </div>
                 <div class="pi-text">
@@ -48,6 +43,6 @@ if($statement->execute())
 
 
 		';
-	}
-	echo $output;
+    }
+    echo $output;
 }

@@ -39,12 +39,13 @@ while($row = mysqli_fetch_array($result)){
 		$tag = "Please Replenish product supply";
 		$status = "";
 		$color = "#ffd044";
-	} elseif ($qty <= 3 && $qty = 0) {
+	} elseif ($qty <= 3) {
 		$qty = " ";
-		$tag = "Please Replenish product supply";
+		$tag = "Critical Supply! Replenish";
 		$status = "";
 		$color = "red";
-	} else {
+	} elseif ($qty >8) {
+		# code...
 		$qty = " ";
 		$tag = "Sufficent Supply";
 		$status = "";

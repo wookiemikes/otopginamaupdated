@@ -319,7 +319,7 @@ include 'dashboardlogout.php';
                   </tr>
                   <tr>
                     <td> <?php echo $productnamelow; ?></td>
-                    <td><?php echo $ratinglow; ?></td>
+                    <td><?php echo $ratinglow1; ?></td>
                   </tr>
                 </table>
               </div>

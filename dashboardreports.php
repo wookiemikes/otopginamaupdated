@@ -45,7 +45,7 @@
 
 	$total_warning = 0;
 
-	$total_warning_query = "SELECT * FROM shelves WHERE QTY <=8 AND QTY >=5 ";
+	$total_warning_query = "SELECT * FROM shelves WHERE QTY <=8 AND QTY >=4 ";
 
 	$total_warning_results = mysqli_query($connect, $total_warning_query);
 
@@ -57,7 +57,7 @@
 
 	$total_critical = 0;
 
-	$total_critical_query = "SELECT * FROM shelves WHERE QTY <= 5";
+	$total_critical_query = "SELECT * FROM shelves WHERE QTY <= 3";
 
 	$total_critical_results = mysqli_query($connect, $total_critical_query);
 
