@@ -29,7 +29,6 @@ include 'productview1.php';
   <link rel="stylesheet" href="css/jquery-ui.min.css" type="text/css">
   <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
   <link rel="stylesheet" href="css/style.css" type="text/css">
-  <link rel="stylesheet" href="css/rapidstyle.css" type="text/css">
   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
@@ -160,28 +159,40 @@ include 'productview1.php';
             </div>
           </div>
           <div class="col-lg-3 text-right col-md-3 mt-4 ">
-            <ul class="nav-right nav navbar-nav">
-              <li>
-                <a type="button" id="cart-popover" class="btn" data-placement="bottom" title="Shopping Cart">
-                  <span><i class="icon_bag_alt"></i></span>
-                  <span class="badge"></span>
-                  <span class="total_price">$ 0.00</span>
-                </a>
-              </li>
-            </ul>
-            <div id="popover_content_wrapper" style="display: none">
-              <div id="cart_details"></div>
-              <div align="right">
-                <a href="#" class="btn btn-primary" id="check_out_cart">
-                  <span class="glyphicon glyphicon-shopping-cart"></span> Check out
-                </a>
-                <a href="#" class="btn btn-default" id="clear_cart">
-                  <span class="glyphicon glyphicon-trash"></span> Clear
-                </a>
-              </div>
+            <div class="container">
+              <ul class="nav-right">
+                <li class="cart-icon">
+                  <a id="cart-popover" data-placement="bottom" title="Shopping Cart" href="#">
+                    <i class="icon_bag_alt"></i>
+                    <span class="badge"></span>
+                    <span class="total_price">$ 0.00</span>
+                  </a>
+                  
+                </li>
+              </ul>
+              
             </div>
-
           </div>
+          <div id="popover_content_wrapper" style="display: none; width: 1500px;">
+
+                    <table class="table table-responsive">
+                      <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                      </tr>
+                    </table>
+                    <span id="cart_details">
+
+                    </span>
+                    <div class="text-center">
+                      <a href="#" class="primary-btn view-card btn-block" id="clear_cart">CLEAR CART</a>
+                      <a href="#" class="primary-btn checkout-btn btn-block" id="check_out_cart">CHECK OUT</a>
+                    </div>
+
+                  </div>
 
         </div>
       </div>
@@ -329,7 +340,7 @@ include 'productview1.php';
           <div class="row" id="display_item">
 
           </div>
-         </div> 
+        </div>
 
 
 
@@ -344,7 +355,7 @@ include 'productview1.php';
         </div>
 
 
-      </>
+        </>
   </section>
   <!-- Banner Section End -->
 
@@ -538,8 +549,11 @@ include 'productview1.php';
         $.ajax({
           url: "fetch_cart.php",
           method: "POST",
-          success: function(data) {
-            $('#cart_details').html(data.cart_details);
+          dataType:"json",
+          success:function(data)
+          {
+            $("#cart_details").empty().append(data.cart_details);
+            //$('#').html(data.);
             $('.total_price').text(data.total_price);
             $('.badge').text(data.total_item);
           }

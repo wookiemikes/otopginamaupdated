@@ -8,7 +8,7 @@ $total_price = 0;
 $total_item = 0;
 
 $output = '
-<div class="table-responsive" id="order_table">
+<div class="table" id="order_table">
 	<table class="table table-bordered table-striped">
 		<tr>  
             <th width="40%">Product Name</th>  
@@ -24,10 +24,10 @@ if(!empty($_SESSION["shopping_cart"]))
 	{
 		$output .= '
 		<tr>
-			<td>'.$values["name"].'</td>
-			<td>'.$values["qty"].'</td>
-			<td align="right">$ '.$values["price"].'</td>
-			<td align="right">$ '.number_format($values["product_quantity"] * $values["product_price"], 2).'</td>
+			<td>'.$values["product_name"].'</td>
+			<td>'.$values["product_quantity"].'</td>
+			<td align="right">₱ '.$values["product_price"].'</td>
+			<td align="right">₱ '.number_format($values["product_quantity"] * $values["product_price"], 2).'</td>
 			<td><button name="delete" class="btn btn-danger btn-xs delete" id="'. $values["product_id"].'">Remove</button></td>
 		</tr>
 		';
@@ -37,7 +37,7 @@ if(!empty($_SESSION["shopping_cart"]))
 	$output .= '
 	<tr>  
         <td colspan="3" align="right">Total</td>  
-        <td align="right">$ '.number_format($total_price, 2).'</td>  
+        <td align="right">₱ '.number_format($total_price, 2).'</td>  
         <td></td>  
     </tr>
 	';
@@ -59,4 +59,4 @@ $data = array(
 	'total_item'		=>	$total_item
 );	
 
-echo json_encode($data);
+echo json_encode($data, JSON_PRETTY_PRINT);

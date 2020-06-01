@@ -24,21 +24,26 @@ if($statement->execute())
                   </div>
                   <ul>
                     <form action="index.php" method="post">
-                      <li class="w-icon active"><a href="#"><i class="icon_bag_alt"></i></a></li>
-                    
+                      
                       <input type="hidden" name="product_id" value="' . $row["product_id"] . '">
                       <li class="quick-view"><input type="submit" name="view" value="+ Quick View"></li>
                     </form>
                   </ul>
                 </div>
                 <div class="pi-text">
-                  <div class="catagory-name">Shoes</div>
-                  <a href="#">
+                 <a href="#">
                     <h5><b>' . $row["name"] . '</b></h5>
                   </a>
                   <div class="product-price">
                   ₱ ' . $row["price"] . '.00
                   </div>
+                  <div class="catagory-name">
+                    <input type="hidden" name="hidden_name" id="name' . $row["product_id"] . '" value="' . $row["name"] . '" />
+                    <input type="hidden" name="hidden_price" id="price' . $row["product_id"] . '" value="' . $row["price"] . '" />
+                    <input type="text" name="quantity" id="quantity' . $row["product_id"] . '" class="form-control" value="1" />
+                    <input type="button" name="add_to_cart" id="' . $row["product_id"] . '" style="margin-top:5px;" class="btn btn-warning form-control add_to_cart" value="Add to Cart" />
+                  </div>
+                  
                 </div>
               </div>
             </div>
