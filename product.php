@@ -117,55 +117,40 @@ include 'productview1.php';
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-3 text-right col-md-3 mt-4">
-                        <ul class="nav-right">
-                            <li class="cart-icon"><a href="#">
-                                    <i class="icon_bag_alt"></i>
-                                    <span>3</span>
-                                </a>
-                                <div class="cart-hover">
-                                    <div class="select-items">
-                                        <table>
-                                            <tbody>
-                                                <tr>
-                                                    <td class="si-pic"><img src="img/select-product-1.jpg" alt=""></td>
-                                                    <td class="si-text">
-                                                        <div class="product-selected">
-                                                            <p>$60.00 x 1</p>
-                                                            <h6>Kabino Bedside Table</h6>
-                                                        </div>
-                                                    </td>
-                                                    <td class="si-close">
-                                                        <i class="ti-close"></i>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="si-pic"><img src="img/select-product-2.jpg" alt=""></td>
-                                                    <td class="si-text">
-                                                        <div class="product-selected">
-                                                            <p>$60.00 x 1</p>
-                                                            <h6>Kabino Bedside Table</h6>
-                                                        </div>
-                                                    </td>
-                                                    <td class="si-close">
-                                                        <i class="ti-close"></i>
-                                                    </td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                    <div class="select-total">
-                                        <span>total:</span>
-                                        <h5>$120.00</h5>
-                                    </div>
-                                    <div class="select-button">
-                                        <a href="#" class="primary-btn view-card">VIEW CARD</a>
-                                        <a href="#" class="primary-btn checkout-btn">CHECK OUT</a>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="cart-price">$150.00</li>
-                        </ul>
+                    <div class="col-lg-3 text-right col-md-3 mt-4 ">
+                        <div class="container">
+                            <ul class="nav-right">
+                                <li class="cart-icon">
+                                    <a id="cart-popover" data-placement="bottom" title="Shopping Cart" href="#">
+                                        <i class="icon_bag_alt"></i>
+                                        <span class="badge"></span>
+                                        <span class="total_price">$ 0.00</span>
+                                    </a>
+
+                                </li>
+                            </ul>
+
+                        </div>
+                    </div>
+                    <div id="popover_content_wrapper" style="display: none; width: 1500px;">
+
+                        <table class="table table-responsive">
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </table>
+                        <span id="cart_details">
+
+                        </span>
+                        <div class="text-center">
+                            <a href="#" class="primary-btn view-card btn-block" id="clear_cart">CLEAR CART</a>
+                            <a href="#" class="primary-btn checkout-btn btn-block" id="check_out_cart">CHECK OUT</a>
+                        </div>
+
                     </div>
                 </div>
             </div>

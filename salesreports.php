@@ -181,7 +181,7 @@ include 'dashboardlogout.php';
                 <div class="col-md-6 col-sm-6">
                   <h5 class="card-title">Revenue Chart (Daily) <i class="nc-icon nc-sound-wave text-success" aria-hidden="true"></i></h5>
                 </div>
-                <div class="col-md-6 col-sm-6"><button class="btn btn-sm btn-success" style="float: right;">Generate Excel File</button></div>
+                <div class="col-md-6 col-sm-6"><button class="btn btn-sm btn-success" data-toggle="modal" data-target="#generate" style="float: right;">Generate Excel File</button></div>
                 <div class="col-md-6">
                 </div>
               </div>
@@ -490,6 +490,40 @@ include 'dashboardlogout.php';
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
             <button type="submit" name="monthlygen" class="btn btn-primary">Generate</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="generate" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Generate</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <form action="salesreports.php" method="POST">
+          <div class="modal-body">
+            Generate Excel
+            <div class="col-md-12 row">
+              <div class="col-md-12"></div>
+              <div class="col-md-6 mb-3">
+                <label for="lastName">From<i>(date)</i>:</label>
+                <input type="date" class="form-control" name="exceldate1" id="lastName" placeholder="" value="" required>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="lastName">To<i>(date)</i>:</label>
+                <input type="date" class="form-control" name="exceldate2" id="lastName" placeholder="" value="" required>
+
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="submit" name="generate" class="btn btn-primary">Generate</button>
           </div>
         </form>
       </div>

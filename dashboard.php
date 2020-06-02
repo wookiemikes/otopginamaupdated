@@ -1,17 +1,17 @@
-<?php 
+<?php
 
-  session_start();
+session_start();
 
-  if (!isset($_SESSION['loggedIN'])) {
-    # code...
-    header('Location: dashboardlogin.php');
-    exit();
-  }
+if (!isset($_SESSION['loggedIN'])) {
+  # code...
+  header('Location: dashboardlogin.php');
+  exit();
+}
 
-  include 'dashboardreports.php';
-  include 'dashboardlogout.php';
+include 'dashboardreports.php';
+include 'dashboardlogout.php';
 
- ?>
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -238,65 +238,117 @@
             </div>
           </div>
         </div>
-        <div class="row">
-          <div class="col-md-12">
-            <div class="card ">
-              <div class="card-header ">
-                <h5 class="card-title">Hot Items <i class="fa fa-fire" aria-hidden="true"></i></h5>
-                <p class="card-category">Most Sold items</p>
-              </div>
-              <div class="card-body ">
-                
-              </div>
-              <div class="card-footer ">
-                <hr>
-                <div class="stats">
-                  <i class="fa fa-history"></i> Refresh
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          
-          <div class="col-md-8">
-            <div class="card card-chart">
-              <div class="card-header">
-                <h5 class="card-title">Top Rated Products <i class="fa fa-star"></i></h5>
-                <p class="card-category">Line Chart with Points</p>
-              </div>
-              <div class="card-body">
-                <canvas id="speedChart" width="400" height="100"></canvas>
-              </div>
-              <div class="card-footer">
-                <div class="chart-legend">
-                  <i class="fa fa-circle text-info"></i> Tesla Model S
-                  <i class="fa fa-circle text-warning"></i> BMW 5 Series
-                </div>
-                <hr/>
-                <div class="card-stats">
-                  <i class="fa fa-history"></i> Refresh
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="card ">
-              <div class="card-header ">
-                <h5 class="card-title">Sales</h5>
-                <p class="card-category">Today's Total Revenue</p>
-              </div>
-              <div class="card-body ">
-              </div>
-              <div class="card-footer ">
 
-                <hr>
-                <div class="stats">
-                  <a href="#" data-toggle="modal" data-target="#generateModal"><i class="fa fa-history"></i> Refresh</a>
+        <div class="row">
+          <div class="col-lg-6 col-md-6 col-sm-6">
+            <div class="card card-stats">
+              <a href="dashboardproducts.php">
+                <div class="card-body ">
+                  <div class="row">
+                    <div class="col-5 col-md-4">
+                      <div class="icon-big text-center icon-warning">
+                        <i class="nc-icon nc-box-2 text-warning"></i>
+                      </div>
+                    </div>
+                    <div class="col-7 col-md-8">
+                      <div class="numbers">
+                        <p class="card-category">Add</p>
+                        <p class="card-title"> PRODUCTS
+                          <p>
+                      </div>
+                    </div>
+                  </div>
                 </div>
+              </a>
+              <div class="card-footer ">
+                <hr>
+
               </div>
             </div>
           </div>
+
+          <div class="col-lg-6 col-md-6 col-sm-6">
+            <div class="card card-stats">
+              <a href="dashboardstores.php">
+                <div class="card-body ">
+                  <div class="row">
+                    <div class="col-5 col-md-4">
+                      <div class="icon-big text-center icon-warning">
+                        <i class="nc-icon nc-shop text-primary"></i>
+                      </div>
+                    </div>
+                    <div class="col-7 col-md-8">
+                      <div class="numbers">
+                        <p class="card-category">Add</p>
+                        <p class="card-title"> COMPANIES
+                          <p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </a>
+              <div class="card-footer ">
+                <hr>
+
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6 col-md-6 col-sm-6">
+            <div class="card card-stats">
+              <a href="dashboardorders.php">
+                <div class="card-body ">
+                  <div class="row">
+                    <div class="col-5 col-md-4">
+                      <div class="icon-big text-center icon-warning">
+                        <i class="nc-icon nc-delivery-fast text-danger"></i>
+                      </div>
+                    </div>
+                    <div class="col-7 col-md-8">
+                      <div class="numbers">
+                        <p class="card-category">Manage</p>
+                        <p class="card-title"> ORDERS
+                          <p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </a>
+              <div class="card-footer ">
+                <hr>
+
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6 col-md-6 col-sm-6">
+            <div class="card card-stats">
+              <a href="dashboardinventory.php">
+                <div class="card-body ">
+                  <div class="row">
+                    <div class="col-5 col-md-4">
+                      <div class="icon-big text-center icon-warning">
+                        <i class="nc-icon nc-paper text-success"></i>
+                      </div>
+                    </div>
+                    <div class="col-7 col-md-8">
+                      <div class="numbers">
+                        <p class="card-category"> Manage</p>
+                        <p class="card-title"> INVENTORY
+                          <p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </a>
+              <div class="card-footer ">
+                <hr>
+
+              </div>
+            </div>
+          </div>
+
+
         </div>
       </div>
       <footer class="footer footer-black  footer-white ">
@@ -339,7 +391,7 @@
         </div>
         <form action="dashboard.php" method="POST">
           <div class="modal-body">
-          Are you sure?
+            Are you sure?
           </div>
           <div class="modal-footer mt-2" style="border-top: 0 none;">
             <button type="button" class="btn btn-light pl-5 pr-5 text-secondary" style="border-radius: 0px;" data-dismiss="modal">CANCEL</button>

@@ -192,7 +192,7 @@ include 'productview1.php';
                       <a href="#" class="primary-btn checkout-btn btn-block" id="check_out_cart">CHECK OUT</a>
                     </div>
 
-                  </div>
+          </div>
 
         </div>
       </div>
@@ -649,11 +649,11 @@ include 'productview1.php';
   <script src="vendor/counterup/counterup.min.js"></script>
   <script src="vendor/venobox/venobox.min.js"></script>
   <script src="vendor/mobile-nav/mobile-nav.js"></script>
-  <script src="vendor/wow/wow.min.js"></script>
+
   <script src="vendor/owl.carousel/owl.carousel.min.js"></script>
   <script src="vendor/waypoints/jquery.waypoints.min.js"></script>
   <script src="js/main.js"></script>
-  <script src="js/rapid.js"></script>
+
 </body>
 
 </html>
