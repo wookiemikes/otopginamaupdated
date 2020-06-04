@@ -162,36 +162,16 @@ include 'productview1.php';
             <div class="container">
               <ul class="nav-right">
                 <li class="cart-icon">
-                  <a id="cart-popover" data-placement="bottom" title="Shopping Cart" href="#">
+                  <a id="cart-popover"  href="cart.php">
                     <i class="icon_bag_alt"></i>
                     <span class="badge"></span>
-                    <span class="total_price">$ 0.00</span>
+                    <span class="total_price">₱ 0.00</span>
                   </a>
                   
                 </li>
               </ul>
               
             </div>
-          </div>
-          <div id="popover_content_wrapper" style="display: none; width: 1500px;">
-
-                    <table class="table table-responsive">
-                      <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                      </tr>
-                    </table>
-                    <span id="cart_details">
-
-                    </span>
-                    <div class="text-center">
-                      <a href="#" class="primary-btn view-card btn-block" id="clear_cart">CLEAR CART</a>
-                      <a href="#" class="primary-btn checkout-btn btn-block" id="check_out_cart">CHECK OUT</a>
-                    </div>
-
           </div>
 
         </div>
@@ -560,13 +540,6 @@ include 'productview1.php';
         });
       }
 
-      $('#cart-popover').popover({
-        html: true,
-        container: 'body',
-        content: function() {
-          return $('#popover_content_wrapper').html();
-        }
-      });
 
       $(document).on('click', '.add_to_cart', function() {
         var product_id = $(this).attr("id");

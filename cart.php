@@ -23,6 +23,9 @@
     <link rel="stylesheet" href="css/jquery-ui.min.css" type="text/css">
     <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="css/style.css" type="text/css">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -107,55 +110,19 @@
                         </div>
                     </div>
                     <div class="col-lg-3 text-right col-md-3 mt-4">
-                        <ul class="nav-right">
-                            
-                            <li class="cart-icon"><a href="#">
+                        <div class="container">
+                            <ul class="nav-right">
+                                <li class="cart-icon">
+                                <a id="cart-popover"  href="cart.php">
                                     <i class="icon_bag_alt"></i>
-                                    <span>3</span>
+                                    <span class="badge"></span>
+                                    <span class="total_price">₱ 0.00</span>
                                 </a>
-                                <div class="cart-hover">
-                                    <div class="select-items">
-                                        <table>
-                                            <tbody>
-                                                <tr>
-                                                    <td class="si-pic"><img src="img/select-product-1.jpg" alt=""></td>
-                                                    <td class="si-text">
-                                                        <div class="product-selected">
-                                                            <p>$60.00 x 1</p>
-                                                            <h6>Kabino Bedside Table</h6>
-                                                        </div>
-                                                    </td>
-                                                    <td class="si-close">
-                                                        <i class="ti-close"></i>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="si-pic"><img src="img/select-product-2.jpg" alt=""></td>
-                                                    <td class="si-text">
-                                                        <div class="product-selected">
-                                                            <p>$60.00 x 1</p>
-                                                            <h6>Kabino Bedside Table</h6>
-                                                        </div>
-                                                    </td>
-                                                    <td class="si-close">
-                                                        <i class="ti-close"></i>
-                                                    </td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                    <div class="select-total">
-                                        <span>total:</span>
-                                        <h5>$120.00</h5>
-                                    </div>
-                                    <div class="select-button">
-                                        <a href="#" class="primary-btn view-card">VIEW CARD</a>
-                                        <a href="#" class="primary-btn checkout-btn">CHECK OUT</a>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="cart-price">$150.00</li>
-                        </ul>
+                                
+                                </li>
+                            </ul>
+                            
+                        </div>
                     </div>
                 </div>
             </div>
@@ -184,93 +151,16 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <div class="cart-table">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>Image</th>
-                                    <th class="p-name">Product Name</th>
-                                    <th>Price</th>
-                                    <th>Quantity</th>
-                                    <th>Total</th>
-                                    <th><i class="ti-close"></i></th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td class="cart-pic first-row"><img src="img/cart-page/product-1.jpg" alt=""></td>
-                                    <td class="cart-title first-row">
-                                        <h5>Pure Pineapple</h5>
-                                    </td>
-                                    <td class="p-price first-row">$60.00</td>
-                                    <td class="qua-col first-row">
-                                        <div class="quantity">
-                                            <div class="pro-qty">
-                                                <input type="text" value="1">
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td class="total-price first-row">$60.00</td>
-                                    <td class="close-td first-row"><i class="ti-close"></i></td>
-                                </tr>
-                                <tr>
-                                    <td class="cart-pic"><img src="img/cart-page/product-2.jpg" alt=""></td>
-                                    <td class="cart-title">
-                                        <h5>American lobster</h5>
-                                    </td>
-                                    <td class="p-price">$60.00</td>
-                                    <td class="qua-col">
-                                        <div class="quantity">
-                                            <div class="pro-qty">
-                                                <input type="text" value="1">
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td class="total-price">$60.00</td>
-                                    <td class="close-td"><i class="ti-close"></i></td>
-                                </tr>
-                                <tr>
-                                    <td class="cart-pic"><img src="img/cart-page/product-3.jpg" alt=""></td>
-                                    <td class="cart-title">
-                                        <h5>Guangzhou sweater</h5>
-                                    </td>
-                                    <td class="p-price">$60.00</td>
-                                    <td class="qua-col">
-                                        <div class="quantity">
-                                            <div class="pro-qty">
-                                                <input type="text" value="1">
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td class="total-price">$60.00</td>
-                                    <td class="close-td"><i class="ti-close"></i></td>
-                                </tr>
-                            </tbody>
-                        </table>
+                    <div id="popover_content_wrapper" style="width:auto;">
+
+                        <div id="cart_details">
+
+                        </div>
+                    <div class="text-center">
+                      <a href="#" class="primary-btn view-card btn-block" id="clear_cart">CLEAR CART</a>
+                      <a href="#" class="btn-dark primary-btn2 checkout-btn btn-block" id="check_out_cart">CHECK OUT</a>
                     </div>
-                    <div class="row">
-                        <div class="col-lg-4">
-                            <div class="cart-buttons">
-                                <a href="#" class="primary-btn continue-shop">Continue shopping</a>
-                                <a href="#" class="primary-btn up-cart">Update cart</a>
-                            </div>
-                            <div class="discount-coupon">
-                                <h6>Discount Codes</h6>
-                                <form action="#" class="coupon-form">
-                                    <input type="text" placeholder="Enter your codes">
-                                    <button type="submit" class="site-btn coupon-btn">Apply</button>
-                                </form>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 offset-lg-4">
-                            <div class="proceed-checkout">
-                                <ul>
-                                    <li class="subtotal">Subtotal <span>$240.00</span></li>
-                                    <li class="cart-total">Total <span>$240.00</span></li>
-                                </ul>
-                                <a href="#" class="proceed-btn">PROCEED TO CHECK OUT</a>
-                            </div>
-                        </div>
+
                     </div>
                 </div>
             </div>
@@ -400,6 +290,112 @@
         </div>
     </div>
     <!-- Footer Section End -->
+    <script>
+    $(document).ready(function() {
+
+      load_product();
+
+      load_cart_data();
+
+      function load_product() {
+        $.ajax({
+          url: "fetch_item.php",
+          method: "POST",
+          error: function(data) {
+            console.log(data);
+          },
+          success: function(data) {
+            console.log(data);
+            //$(div).find('#display_item').html(data);
+            $("#display_item").empty().append(data);
+            //$('#display_item').html(data);
+          }
+        });
+      }
+
+      function load_cart_data() {
+        $.ajax({
+          url: "fetch_cart.php",
+          method: "POST",
+          dataType:"json",
+          success:function(data)
+          {
+            $("#cart_details").empty().append(data.cart_details);
+            //$('#').html(data.);
+            $('.total_price').text(data.total_price);
+            $('.badge').text(data.total_item);
+          }
+        });
+      }
+
+
+      $(document).on('click', '.add_to_cart', function() {
+        var product_id = $(this).attr("id");
+        var product_name = $('#name' + product_id + '').val();
+        var product_price = $('#price' + product_id + '').val();
+        var product_quantity = $('#quantity' + product_id).val();
+        var action = "add";
+        if (product_quantity > 0) {
+          $.ajax({
+            url: "action.php",
+            method: "POST",
+            data: {
+              product_id: product_id,
+              product_name: product_name,
+              product_price: product_price,
+              product_quantity: product_quantity,
+              action: action
+            },
+            success: function(data) {
+              load_cart_data();
+              alert("Item has been Added into Cart");
+            }
+          });
+        } else {
+          alert("lease Enter Number of Quantity");
+        }
+      });
+
+      $(document).on('click', '.delete', function() {
+        var product_id = $(this).attr("id");
+        var action = 'remove';
+        if (confirm("Are you sure you want to remove this product?")) {
+          $.ajax({
+            url: "action.php",
+            method: "POST",
+            data: {
+              product_id: product_id,
+              action: action
+            },
+            success: function() {
+              load_cart_data();
+              $('#cart-popover').popover('hide');
+              alert("Item has been removed from Cart");
+            }
+          })
+        } else {
+          return false;
+        }
+      });
+
+      $(document).on('click', '#clear_cart', function() {
+        var action = 'empty';
+        $.ajax({
+          url: "action.php",
+          method: "POST",
+          data: {
+            action: action
+          },
+          success: function() {
+            load_cart_data();
+            $('#cart-popover').popover('hide');
+            alert("Your Cart has been clear");
+          }
+        });
+      });
+
+    });
+  </script>
 
     <!-- Js Plugins -->
     <script src="js/jquery-3.3.1.min.js"></script>

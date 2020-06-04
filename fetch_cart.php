@@ -9,7 +9,7 @@ $total_item = 0;
 
 $output = '
 <div class="table" id="order_table">
-	<table class="table table-bordered table-striped">
+	<table class="table table-striped table-bordered table-striped">
 		<tr>  
             <th width="40%">Product Name</th>  
             <th width="10%">Quantity</th>  

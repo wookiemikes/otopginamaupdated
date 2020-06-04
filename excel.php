@@ -4,7 +4,10 @@
 	if(isset($_POST["generate"]))
 	{
 
-		$query = "SELECT * FROM `d0l310_1020_registration_db` . `1020_applicants_tbl` WHERE status ='APPROVED'";
+		$exceldate1 = $_POST["exceldate1"];
+		$exceldate2 = $_POST["exceldate2"];
+
+		$query = "SELECT * FROM `otopginama` . `1020_applicants_tbl` WHERE status ='APPROVED'";
 		$result = mysqli_query($conn, $query);
 		if(mysqli_num_rows($result) > 0)
 		{
