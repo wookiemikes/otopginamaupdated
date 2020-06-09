@@ -197,7 +197,7 @@ include 'dashboardlogout.php';
                   <div class="col-7 col-md-8">
                     <div class="numbers">
                       <p class="card-category">Pending Orders</p>
-                      <p class="card-title"><?php echo "$total_pending"; ?>
+                      <p class="card-title"><?php  echo "$total_pending"; ?>
                         <p>
                     </div>
                   </div>

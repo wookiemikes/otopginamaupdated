@@ -2,14 +2,16 @@
 session_start();
 $connect = mysqli_connect("localhost", "root", "", "otopginama");
 
-$columns = array('order_id', 'order_to', 'products','shipping_address','total_price', 'date_ordered');
+$columns = array('order_id', 'name', 'email','contact_no','shipping_address', 'products', 'payment_type', 'to_pay','date_ordered','date_delivered','status');
 
-$query = "SELECT * FROM orders WHERE order_id = '1' ";
+$query = "SELECT * FROM orders WHERE order_id = '1'";
 
 if(isset($_POST["search"]["value"])){
 	$query .='
-	OR order_to LIKE "%'.$_POST["search"]["value"].'%" 
-	OR total_price LIKE "%'.$_POST["search"]["value"].'%" 
+	OR name LIKE "%'.$_POST["search"]["value"].'%" 
+	OR products LIKE "%'.$_POST["search"]["value"].'%" 
+	OR payment_type LIKE "%'.$_POST["search"]["value"].'%"
+	OR to_pay LIKE "%'.$_POST["search"]["value"].'%"
 	OR date_ordered LIKE "%'.$_POST["search"]["value"].'%"
 	';
 }
@@ -18,7 +20,7 @@ if(isset($_POST["order"])){
 	$query .= 'ORDER BY '.$columns[$_POST['order']['0']['column']].' '.$_POST['order']['0']['dir'].'';
 }
 else{
-	$query .= 'ORDER BY date_ordered ASC ';
+	$query .= 'ORDER BY order_id asc ';
 }
 
 $query1 ='';
@@ -36,18 +38,21 @@ $data = array();
 while($row = mysqli_fetch_array($result)){
   $sub_array = array();
   $sub_array[] = $row["order_id"];	
-  $sub_array[] = $row["order_to"];
-  $sub_array[] = $row["total_price"];
+  $sub_array[] = $row["name"];
+  $sub_array[] = $row["products"];
+  $sub_array[] = $row["payment_type"];
+  $sub_array[] = $row["to_pay"];
   $sub_array[] = $row["date_ordered"];
-  $sub_array[] = "	<form action='dashboardorder_update1.php' method='POST'>
-					  <input type='hidden' name='order_ida' value='".$row["order_id"]."'>
+  $sub_array[] = $row["status"];
+  $sub_array[] = "	<form action='dashboardorders.php' method='POST'>
+					  <input type='hidden' name='order_id' value='".$row["order_id"]."'>
 					  <input type='submit' class ='btn btn-sm btn-info' name ='submit' id = 'submit' value ='Update'>
 					</form>  
 					  ";
   $data[] = $sub_array;
 }
 function get_all_data($connect){
-	$query = "SELECT * FROM orders";
+	$query = "SELECT * FROM orders WHERE status = 'PENDING'";
 	$result = mysqli_query($connect, $query);
 	return mysqli_num_rows($result);
    }

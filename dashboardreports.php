@@ -85,7 +85,7 @@
 
 	$total_delivered = 0;
 
-	$total_deli_query = "SELECT * FROM orders WHERE status = 'delivered'";
+	$total_deli_query = "SELECT * FROM orders WHERE status = 'Completed'";
 
 	$total_deli_results = mysqli_query($connect, $total_deli_query);
 

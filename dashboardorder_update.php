@@ -8,9 +8,9 @@ if (!isset($_SESSION['loggedIN'])) {
     exit();
 }
 
-
-include 'dashboardlogout.php';
 include 'dashboardorder_update1.php';
+include 'dashboardlogout.php';
+
 
 ?>
 <!DOCTYPE html>
@@ -107,13 +107,13 @@ include 'dashboardorder_update1.php';
 </div> -->
             <div class="content">
                 <div class="row">
-                    <div class="col-md-12">
+                    <div class="col-md-6">
                         <div class="card ">
                             <div class="card-header ">
                                 <h5 class="card-title">
                                     <div class="col-md-12">
                                         <div class="row">
-                                            <div class="col-md-10"><b>Order Management (Pending)</b></div>
+                                            <div class="col-md-10"><b>Update Orders</b></div>
                                         </div>
                                     </div>
 
@@ -121,17 +121,30 @@ include 'dashboardorder_update1.php';
                                 <p class="card-category"></p>
                             </div>
                             <div class="card-body ">
-                                <div>
-                                    <input class="form-control col-md-3" type="text" name="order_id" value="<?php echo $_SESSION["status"] ?>" readonly>
-                                </div>
+                                <form action="dashboardorder_update1.php" method="post">
+                                    <div>
+                                        <input class="form-control col-md-3" type="hidden" name="order_update" value="<?php echo $_SESSION["order_id"]; ?>" readonly>
+                                    </div>
+                                    <div>
+                                        <input class="form-control col-md-12" type="date" name="date_update" value="<?php echo $_SESSION["date_delivered"]; ?>">
+                                    </div>
+                                    <br>
+                                    <div>
+                                        <select class="form-control" id="company_name" name="statusupdate">
+                                            <option value="<?php echo $_SESSION["status"]; ?>" selected="selected"><?php echo $_SESSION["status"]; ?></option>
+                                            <option value="Completed" selected="selected">Completed</option>
+                                            <option value="On the Way" selected="selected">On My Way</option>
+                                                                                
+                                        </select>
+                                    </div>
+                                    <br>
+                                    <div class="text-center">
+                                        <input class="btn btn-md btn-warning col-md-6" type="submit" name="updateorder" value="UPDATE ORDER">
+                                    </div>
+                                </form>
 
                             </div>
-                            <div class="card-footer ">
-                                <hr>
-                                <div class="stats">
-                                    <i class="fa fa-history"></i> Updated
-                                </div>
-                            </div>
+
                         </div>
                     </div>
                 </div>

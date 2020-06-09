@@ -210,18 +210,24 @@ include 'dashboardorder_update1.php';
                     <thead class="text-primary">
                       <tr>
                         <th>Order Code</th>
-                        <th>Order to</th>
-                        <th>Total Price</th>
+                        <th>Name</th>
+                        <th>Product (QTY)</th>
+                        <th>Payment Type</th>
+                        <th>To Pay</th>
                         <th>Date Ordered</th>
+                        <th>Status</th>
                         <th>Action</th>
                       </tr>
                     </thead>
                     <tfoot>
                       <tr>
                         <th>Order Code</th>
-                        <th>Order to</th>
-                        <th>Total Price</th>
+                        <th>Name</th>
+                        <th>Products (QTY)</th>
+                        <th>Payment Type</th>
+                        <th>To Pay</th>
                         <th>Date Ordered</th>
+                        <th>Status</th>
                         <th>Action</th>
                       </tr>
                     </tfoot>
