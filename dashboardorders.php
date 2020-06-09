@@ -197,7 +197,7 @@ include 'dashboardorder_update1.php';
                 <h5 class="card-title">
                   <div class="col-md-12">
                     <div class="row">
-                      <div class="col-md-10"><b>Order Management (Pending)</b></div>
+                      <div class="col-md-10"><b>Order Management</b></div>
                     </div>
                   </div>
 

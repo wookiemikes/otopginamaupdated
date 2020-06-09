@@ -57,7 +57,14 @@ while($row = mysqli_fetch_array($result)){
   $sub_array[] = $row["product_name"];
   $sub_array[] = $row["QTY"];
   $sub_array[] = "<i style='color:".$color."'>". $status ."".$tag."</i>";
-  $sub_array[] = "<button class ='btn btn-sm btn-info' name ='update' id = 'update' value ='".$row["shelve_id"]."'>update</button>";
+  $sub_array[] = "
+				<form action='dashboardinventory.php' method='POST'>
+					  <input type='hidden' name='shelve_id' value='".$row["shelve_id"]."'>
+					  <input type='submit' class ='btn btn-sm btn-info' name ='update' id = 'update' value ='UPDATE'>
+					</form> 
+  
+				  
+				  ";
   $data[] = $sub_array;
 }
 function get_all_data($connect){

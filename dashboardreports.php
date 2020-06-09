@@ -33,7 +33,7 @@
 
 	$total_sufficient = 0;
 
-	$total_suf_query = "SELECT * FROM shelves WHERE QTY >= 8 ";
+	$total_suf_query = "SELECT * FROM shelves WHERE QTY >= 9 ";
 
 	$total_suf_results = mysqli_query($connect, $total_suf_query);
 

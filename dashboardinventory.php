@@ -9,6 +9,7 @@ if (!isset($_SESSION['loggedIN'])) {
 }
 
 include 'dashboardreports.php';
+include 'dashboardinventory_update1.php';
 include 'dashboardlogout.php';
 
 ?>

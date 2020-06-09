@@ -20,7 +20,7 @@ if(isset($_POST["order"])){
 	$query .= 'ORDER BY '.$columns[$_POST['order']['0']['column']].' '.$_POST['order']['0']['dir'].'';
 }
 else{
-	$query .= 'ORDER BY order_id asc ';
+	$query .= 'ORDER BY status ASC ';
 }
 
 $query1 ='';
